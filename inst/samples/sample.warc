@@ -1,0 +1,1714 @@
+WARC/1.0
+WARC-Type: warcinfo
+WARC-Date: 2016-12-13T03:16:04Z
+WARC-Record-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+Content-Length: 344
+Content-Type: application/warc-fields
+WARC-Filename: CC-MAIN-20161202170904-00511-ip-10-31-129-80.ec2.internal.warc.gz
+
+robots: classic
+hostname: ip-10-31-129-80.ec2.internal
+software: Nutch 1.6 (CC)/CC WarcExport 1.0
+isPartOf: CC-MAIN-2016-50
+operator: CommonCrawl Admin
+description: Wide crawl of the web for November 2016
+publisher: CommonCrawl
+format: WARC File Format 1.0
+conformsTo: http://bibnum.bnf.fr/WARC/WARC_ISO_28500_version1_latestdraft.pdf
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Date: 2016-12-11T14:00:57Z
+WARC-Record-ID: <urn:uuid:e5dad150-1404-4810-9bf4-d455cf4a2ec9>
+Content-Length: 235
+Content-Type: application/http; msgtype=request
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-IP-Address: 213.155.18.48
+WARC-Target-URI: http://08.od.ua/foxy_foksi_sportivnyy_klub/contacts
+
+GET /foxy_foksi_sportivnyy_klub/contacts HTTP/1.0
+Host: 08.od.ua
+Accept-Encoding: x-gzip, gzip, deflate
+User-Agent: CCBot/2.0 (http://commoncrawl.org/faq/)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Date: 2016-12-11T14:00:57Z
+WARC-Record-ID: <urn:uuid:7a59a147-4186-41ee-8361-63504f59b710>
+Content-Length: 11436
+Content-Type: application/http; msgtype=response
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:e5dad150-1404-4810-9bf4-d455cf4a2ec9>
+WARC-IP-Address: 213.155.18.48
+WARC-Target-URI: http://08.od.ua/foxy_foksi_sportivnyy_klub/contacts
+WARC-Payload-Digest: sha1:PF3NBPEM3K7Y7HA3N7NA4EPHDZURGMLV
+WARC-Block-Digest: sha1:DCVA76BB5FHOPJ6CDQZM6XS3VID6K7X5
+WARC-Truncated: length
+
+HTTP/1.1 200 OK
+Set-Cookie: design=default; expires=Mon, 11-Dec-2017 13:14:10 GMT; path=/
+Connection: close
+Server: nginx/1.4.4
+Vary: Accept-Encoding
+Date: Sun, 11 Dec 2016 13:14:10 GMT
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="ru-RU" />
+	<meta name="description" content="Foxy, спортивный клуб в Одессе - Контакты" />
+	<meta name="keywords" content="Foxy, спортивный клуб, Одесса" />
+	<title>Foxy, спортивный клуб в Одессе - Контакты</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link type="image/x-icon" href="/design/default/images/spravochnaya.ico" rel="icon" />
+
+	<link href="/design/default/css/restyle/coners.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="/design/default/css/restyle/buttons.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="/design/default/css/restyle/styles.css" rel="stylesheet" type="text/css" media="screen, projection" />
+
+	<script type="text/javascript" language="javascript" src="/design/default/js/restyle/lytebox.js"></script>
+	<link rel="stylesheet" href="/design/default/css/restyle/lytebox.css" type="text/css" media="screen" />
+
+
+<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/restyle/ie.css" />
+<![endif]-->
+
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+	  { lang: 'ru' }
+	</script>
+</head>
+<body>
+<div class="out">
+	<div class="header">
+		<span class="logo"><span><a href="/" title="Справочная Одессы">Справочная Одессы</a></span></span>
+
+		<p class="tels">+ 38 048 738 08 08</p>
+
+		<div class="search-box">
+			<span class="sb-leftside">&nbsp;</span>
+			<div id="search" class="search">
+				<form id="searchForm" action="/poisk/" onsubmit="return autocomplete.submit();">
+					<input type="text" class="txt" id="autocomplete_input" value="" />
+					<img id="search_loader" alt="" src="/design/default/images/loader.gif" style="display:none;" />
+					<input id="search_button" type="submit" value="" class="butt" onclick="autocomplete.submit();" />
+				</form>
+			</div>
+								</div><!--header end-->
+
+		<span class="man">&nbsp;</span>
+
+			<div class="top-menu">
+			<ul>
+
+
+
+
+
+
+				<li class="fst"><a title="Foxy, спортивный клуб в Одессе" href="/foxy_foksi_sportivnyy_klub/main" >О фирме</a></li>
+				<li><a title="Foxy, спортивный клуб - Каталог продукции в Одессе" href="/foxy_foksi_sportivnyy_klub" >Каталог продукции</a></li>
+				<li><a title="Цены в Foxy, спортивный клуб - Предприятия Одессы" href="/sport_pohod_rybalka/tancy_sovremennye/foxy_foksi_sportivnyy_klub" >Прайс-листы</a></li>
+								<li class="lst"><a title="Карта Одесса" href="/foxy_foksi_sportivnyy_klub/contacts" class="active">Контакты</a></li>
+
+<li><div style="margin: 10px 20px 10px 50px;"><div class="g-plusone"></div></div></li>
+
+
+			</ul>
+			<span class="bar-left">&nbsp;</span>
+			<span class="bar-right">&nbsp;</span>
+		</div>
+	</div><!--header end-->
+	<div class="content clearfix">
+				<div id="autocomplete" style="display:none;top:-72px;left:214px;">
+					<ul id="autocomplete_container"><li></li></ul>
+					<ul><li class="clearfix"><a class="close" onclick="autocomplete.disable();">закрыть</a></li></ul>
+				</div>
+
+		<!-- Top Firm Banner -->
+
+			<!-- End Top Firm Banners -->
+
+		<div class="top-banner-place clearfix">
+
+
+			<div class="right-cont">
+				<div class="adv-text"  style="width:70%">
+					<span class="cnrs-2-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					<div class="adv-text-inner">
+						<h1>Foxy, спортивный клуб &#171;Контакты&#187;</h1>Фокси											</div>
+					<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+				</div><!--adv-text end-->
+			</div>
+					</div>
+
+
+			<div class="address_block clearfix" style="margin:10px;">
+			<div class="adress-blk-inner">
+
+				<table cellpadding="0" cellspacing="0" width="100%" style="margin:10px;">
+					<tr>
+											</tr>
+				</table>
+			</div>
+		</div>
+							<div class="adress-block clearfix">
+					<div class="adress-blk-inner">
+						<span class="cnrs-5-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+						<table class="table-style-2">
+							<tr>
+								<th>Адрес</th>
+								<th>Телефон</th>
+								<th>Режим работы</th>
+															</tr>
+																							<tr class="bold">
+										<td class="td-1"><strong>г. Одесса,&nbsp;Ул. Прохоровская, 12, 2 этаж</strong></td>
+										<td class="td-2">0936248218</td>
+										<td class="td-3"></td>
+																			</tr>
+																								<tr class="bold">
+										<td class="td-1"><strong>г. Одесса,&nbsp;Ул. Бочарова, 44</strong></td>
+										<td class="td-2">0674826371, 7714136</td>
+										<td class="td-3"></td>
+																			</tr>
+																					</table>
+																		<span class="cnrs-6-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					</div><!--adress-blk-inner end-->
+				</div><!--adress-block end-->
+
+
+
+
+
+															<div class="counter-text">
+								<p>Просмотров Foxy, спортивный клуб за 30 дней: 70<br />
+								Просмотров Foxy, спортивный клуб с момента добавления: 6596</p>
+							</div>
+								<div class="bottom-menu clearfix">
+			<ul>
+				<li class="fst"><a title="Foxy, спортивный клуб в Одессе" href="/foxy_foksi_sportivnyy_klub/main" ><span>О фирме</span></a></li>
+				<li><a title="Foxy, спортивный клуб - Каталог продукции в Одессе" href="/foxy_foksi_sportivnyy_klub"} ><span>Каталог продукции</span></a></li>
+				<li><a title="Цены в Foxy, спортивный клуб - Предприятия Одессы" href="/sport_pohod_rybalka/tancy_sovremennye/foxy_foksi_sportivnyy_klub" ><span>Прайс-листы</span></a></li>
+												<li class="lst"><a title="Одесса карта проезда" href="/foxy_foksi_sportivnyy_klub/contacts" class="active"><span>Контакты</span></a></li>
+			</ul>
+		</div><!--bottom-menu end-->
+		<span class="cnrs-1-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+	</div><!--content end-->
+
+
+
+	<div class="push">&nbsp;</div>
+</div><!--out end-->
+<div class="footer">
+	<div class="ftr-inner clearfix">
+		<p class="logo-ftr">&nbsp;</p>
+		<p class="copyright">&copy; 2016&nbsp;Foxy, спортивный клуб<br />
+			Использование информации с сайта справочной, без обратной<br />
+			ссылки на <a title="Одесса сайт" href="/">http://08.od.ua</a>, категорически запрещено!
+		</p>
+
+		<p class="cnt-text">
+			Просмотров за сегодня: 6557<br />
+			Просмотров за месяц: 382210<br />
+		</p>
+
+		<div class="counter">
+											<a onclick="window.open('http://www.bigmir.net')"><img src="http://c.bigmir.net/?v16840041&amp;s16839405&amp;t21" alt="bigmir)net TOP 100" width="88" height="31" /></a>
+				<a onclick="window.open('http://top100.rambler.ru/home?id=1919603')"><img src="/design/default/images/rambler.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
+				<a onclick="window.open('http://www.liveinternet.ru/click')"><img src="http://counter.yadro.ru/hit?t44.6;uhttp%3A%2F%2F08.od.ua%2Ffoxy_foksi_sportivnyy_klub%2Fcontacts" alt="LiveInternet" width="31" height="31" /></a>
+				<a onclick="window.open('http://hit.ua/?x=107467')"><img border="0" width="1" height="1" src="http://c.hit.ua/hit?i=107467&amp;g=0&amp;x=2&amp;s=1&amp;c=1&amp;t=-120&amp;r=&amp;u=http%3A%2F%2F08.od.ua%2Ffoxy_foksi_sportivnyy_klub%2Fcontacts" alt="hit.ua" /></a>
+					</div>
+	</div>
+</div><!--footer end-->
+	<ul id="autocomplete_template" style="display:none"><li class="clearfix"><a onclick="return false;"><span>${phrase}</span><strong>${itemsCount} результатов</strong></a></li></ul>
+	<script type="text/javascript" src="/design/default/js/08.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript">jQuery.noConflict();</script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery.formtips.1.2.2.packed.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery.equalHeight.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/start.js"></script>
+	<img src="http://counter.rambler.ru/top100.scn?1919603" width="0" height="0" alt="" />
+	<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+	<script type="text/javascript">try{_gat._getTracker('UA-10061151-2')._trackPageview();}catch(e){}</script>
+
+
+	<script type="text/javascript">
+		 new Form.Observer('searchForm', 0.3, function(form, value){
+		  })
+		   $('searchForm').onsubmit = function() {
+		    return autocomplete.submit()
+		  }
+	</script>
+
+
+
+
+	<script type="text/javascript"> _shcp = []; _shcp.push({widget_id : 507357, widget : "Chat"}); (function() { var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true; hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://widget.siteheart.com/apps/js/sh.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hcc, s.nextSibling); })();</script>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	(function (d, w, c) {
+	    (w[c] = w[c] || []).push(function() {
+	        try {
+	            w.yaCounter19895821 = new Ya.Metrika({id:19895821,
+	                    webvisor:true,
+	                    clickmap:true,
+	                    trackLinks:true,
+	                    accurateTrackBounce:true});
+	        } catch(e) { }
+	    });
+
+	    var n = d.getElementsByTagName("script")[0],
+	        s = d.createElement("script"),
+	        f = function () { n.parentNode.insertBefore(s, n); };
+	    s.type = "text/javascript";
+	    s.async = true;
+	    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+	    if (w.opera == "[object Opera]") {
+	        d.addEventListener("DOMContentLoaded", f, false);
+	    } else { f(); }
+	})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="//mc.yandex.ru/watch/19895821" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+<a href="https://plus.google.com/108905381149799728781" rel="publisher author"></a>
+</body>
+</html>
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Date: 2016-12-11T14:00:57Z
+WARC-Record-ID: <urn:uuid:3f2714aa-ca38-47b9-95af-c27f9a4f607d>
+Content-Length: 20
+Content-Type: application/warc-fields
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:7a59a147-4186-41ee-8361-63504f59b710>
+WARC-Target-URI: http://08.od.ua/foxy_foksi_sportivnyy_klub/contacts
+
+fetchTimeMs: 546
+
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Date: 2016-12-11T14:08:53Z
+WARC-Record-ID: <urn:uuid:08a08f11-721f-4db5-aa03-fcaa2e112f36>
+Content-Length: 274
+Content-Type: application/http; msgtype=request
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-IP-Address: 213.155.18.48
+WARC-Target-URI: http://08.od.ua/legal_yuridicheskaya_kompaniya/tovar_registraciya_likvidaciya_predpriyatiy
+
+GET /legal_yuridicheskaya_kompaniya/tovar_registraciya_likvidaciya_predpriyatiy HTTP/1.0
+Host: 08.od.ua
+Accept-Encoding: x-gzip, gzip, deflate
+User-Agent: CCBot/2.0 (http://commoncrawl.org/faq/)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Date: 2016-12-11T14:08:53Z
+WARC-Record-ID: <urn:uuid:3eb64fb7-c7e0-4831-9b48-b8e4341de4f6>
+Content-Length: 18697
+Content-Type: application/http; msgtype=response
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:08a08f11-721f-4db5-aa03-fcaa2e112f36>
+WARC-IP-Address: 213.155.18.48
+WARC-Target-URI: http://08.od.ua/legal_yuridicheskaya_kompaniya/tovar_registraciya_likvidaciya_predpriyatiy
+WARC-Payload-Digest: sha1:7JHU6APXI3HCJJBOG5QBKK5FV2IHYVBB
+WARC-Block-Digest: sha1:FFICQINSVMNO5O5VOZ5QLIXXVUIXLGNX
+WARC-Truncated: length
+
+HTTP/1.1 200 OK
+Set-Cookie: design=default; expires=Mon, 11-Dec-2017 13:22:06 GMT; path=/
+Connection: close
+Server: nginx/1.4.4
+Vary: Accept-Encoding
+Date: Sun, 11 Dec 2016 13:22:06 GMT
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="ru-RU" />
+	<meta name="description" content="Регистрация-ликвидация предприятий, Легал, юридическая компания в Одессе,  - Регистрация-ликвидация предприятий" />
+	<meta name="keywords" content="Регистрация-ликвидация предприятий, Легал, юридическая компания, Одесса, Регистрация-ликвидация предприятий" />
+	<title>Регистрация-ликвидация предприятий, Легал, юридическая компания в Одессе,  - Регистрация-ликвидация предприятий</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link type="image/x-icon" href="/design/default/images/spravochnaya.ico" rel="icon" />
+
+	<link href="/design/default/css/restyle/coners.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="/design/default/css/restyle/buttons.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="/design/default/css/restyle/styles.css" rel="stylesheet" type="text/css" media="screen, projection" />
+
+	<script type="text/javascript" language="javascript" src="/design/default/js/restyle/lytebox.js"></script>
+	<link rel="stylesheet" href="/design/default/css/restyle/lytebox.css" type="text/css" media="screen" />
+
+
+<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/restyle/ie.css" />
+<![endif]-->
+
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+	  { lang: 'ru' }
+	</script>
+</head>
+<body>
+<div class="out">
+	<div class="header">
+		<span class="logo"><span><a href="/" title="Справочная Одессы">Справочная Одессы</a></span></span>
+
+		<p class="tels">+ 38 048 738 08 08</p>
+
+		<div class="search-box">
+			<span class="sb-leftside">&nbsp;</span>
+			<div id="search" class="search">
+				<form id="searchForm" action="/poisk/" onsubmit="return autocomplete.submit();">
+					<input type="text" class="txt" id="autocomplete_input" value="" />
+					<img id="search_loader" alt="" src="/design/default/images/loader.gif" style="display:none;" />
+					<input id="search_button" type="submit" value="" class="butt" onclick="autocomplete.submit();" />
+				</form>
+			</div>
+								</div><!--header end-->
+
+		<span class="man">&nbsp;</span>
+
+			<div class="top-menu">
+			<ul>
+
+
+
+
+
+
+				<li class="fst"><a title="Легал, юридическая компания в Одессе" href="/legal_yuridicheskaya_kompaniya/main" >О фирме</a></li>
+				<li><a title="Легал, юридическая компания - Каталог продукции в Одессе" href="/legal_yuridicheskaya_kompaniya" >Каталог продукции</a></li>
+				<li><a title="Цены в Легал, юридическая компания - Предприятия Одессы" href="/uslugi_raznoe/registraciya_likvidaciya_predpriyatiy/legal_yuridicheskaya_kompaniya" class="active">Прайс-листы</a></li>
+								<li class="lst"><a title="Карта Одесса" href="/legal_yuridicheskaya_kompaniya/contacts" >Контакты</a></li>
+
+<li><div style="margin: 10px 20px 10px 50px;"><div class="g-plusone"></div></div></li>
+
+
+			</ul>
+			<span class="bar-left">&nbsp;</span>
+			<span class="bar-right">&nbsp;</span>
+		</div>
+	</div><!--header end-->
+	<div class="content clearfix">
+				<div id="autocomplete" style="display:none;top:-72px;left:214px;">
+					<ul id="autocomplete_container"><li></li></ul>
+					<ul><li class="clearfix"><a class="close" onclick="autocomplete.disable();">закрыть</a></li></ul>
+				</div>
+
+		<!-- Top Firm Banner -->
+
+			<!-- End Top Firm Banners -->
+
+		<div class="top-banner-place clearfix">
+
+
+			<div class="right-cont">
+				<div class="adv-text"  style="width:70%">
+					<span class="cnrs-2-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					<div class="adv-text-inner">
+						<h1>Легал, юридическая компания &#8594; Товар &#171;Регистрация-ликвидация предприятий&#187;</h1>											</div>
+					<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+				</div><!--adv-text end-->
+			</div>
+					</div>
+
+
+			<div class="address_block clearfix" style="margin:10px;">
+			<div class="adress-blk-inner">
+
+				<table cellpadding="0" cellspacing="0" width="100%" style="margin:10px;">
+					<tr>
+											</tr>
+				</table>
+			</div>
+		</div>
+							<div class="adress-block clearfix">
+					<div class="adress-blk-inner">
+						<span class="cnrs-5-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+						<table class="table-style-2">
+							<tr>
+								<th>Адрес</th>
+								<th>Телефон</th>
+								<th>Режим работы</th>
+															</tr>
+																							<tr class="bold">
+										<td class="td-1"><strong>г. Одесса,&nbsp;Ул. Генерала ватутина, 19</strong></td>
+										<td class="td-2">7018871</td>
+										<td class="td-3"></td>
+																			</tr>
+																					</table>
+																		<span class="cnrs-6-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					</div><!--adress-blk-inner end-->
+				</div><!--adress-block end-->
+
+
+
+
+					<div class="price-block clearfix">
+									<ul id="breadcrumb" class="clearfix">
+						<li><a href="/" title="Сайт г. Одесса">Главная</a></li>
+						<li><a title="Услуги (разное) в Одессе" href="/uslugi_raznoe">Услуги (разное)</a></li>
+						<li><a title="Регистрация-ликвидация предприятий Одесса" href="/uslugi_raznoe/registraciya_likvidaciya_predpriyatiy">Регистрация-ликвидация предприятий</a></li>
+						<li class="last">Легал, юридическая компания в Одессе, Услуги (разное) - Регистрация-ликвидация предприятий<span></li>
+					</ul>
+
+<div class="price-list">
+	<span class="cnrs-3-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+			<h2>Прайс-листы</h2>
+		<ul class="clearfix">
+					<li class="active"><a title=" - Каталог товаров Одесса" href="/uslugi_raznoe/registraciya_likvidaciya_predpriyatiy/legal_yuridicheskaya_kompaniya">Регистрация-ликвидация предприятий (1)</a></li>
+				</ul>
+			<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+</div>
+		<div class="right-cont">
+
+			<div class="price-table-block">
+				<span class="cnrs-2-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					<div class="tovar-post">
+						<div class="title-box clearfix">
+							<h2>Регистрация-ликвидация предприятий</h2>
+													</div>
+						<p class="img">
+													</p>
+						<div>Регистрация и ликвидация предприятий</div>
+						<div class="product_desc"></div>
+
+											</div>
+				<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+			</div><!--price-table-block end-->
+		</div><!--right-block end-->
+	</div><!--price-block end-->
+
+	<div id="order-form-popup" class="pop-up" title="ОФОРМЛЕНИЕ ЗАКАЗА">
+		<form name="orderForm" action="" method="post">
+			<div class="order-form">
+				<ul>
+					<li class="clearfix"><p><span class="inp2"></span></p><strong>Регистрация-ликвидация предприятий</strong></li>
+					<li class="clearfix"><p><span class="inp2"><span><input type="number" name="count" id="tovarcount" value="1" min="1" onchange="countprice(0.00)" /></span></span></p><strong>Количество *</strong><strong style="padding-left:20px;color:#e02829;" id="zakazprice">0.00 грн.</strong></li>
+					<li class="clearfix"><p><span class="inp2"><span><input type="text" name="surname" value="" /></span></span></p><strong>Фамилия *</strong></li>
+					<li class="clearfix"><p><span class="inp2"><span><input type="text" name="firstName" value="" /></span></span></p><strong>Имя *</strong></li>
+					<li class="clearfix"><p><span class="inp2"><span><input type="text" name="secondName" value="" /></span></span></p><strong>Отчество *</strong></li>
+					<li class="clearfix"><p><span class="inp2"><span><input type="text" name="city" value="" /></span></span></p><strong>Город *</strong></li>
+					<li class="clearfix"><p><span class="inp2"><span><input type="text" name="address" value="" /></span></span></p><strong>Адрес (улица, № дома/квартиры) *</strong></li>
+					<li class="clearfix"><p><span class="inp2"><span><input type="text" name="phoneNumber" value="" /></span></span></p><strong>Номер телефона (+380931111111) *</strong></li>
+					<li class="clearfix"><p><span class="inp2"><span><input type="text" name="email" value="" /></span></span></p><strong>E-mail *</strong></li>
+					<li class="clearfix"><p><span class="inp2"><span><input type="text" name="date" value="" /></span></span></p><strong>Желаемая дата и время доставки</strong></li>
+					<li class="clearfix">
+						<div class="t-area">
+							<span><textarea rows="10" cols="45" name="comments"></textarea></span>
+						</div>
+						<strong>Коментарии</strong>
+					</li>
+					<input type="text" name="country" value="" class="country_field" />
+				</ul>
+			</div>
+			<div class="foot">
+				<strong style="padding-left:5px;padding-top:5px;color:#e03838;font-size:14px;height="16px;"><span id="alertBox"></span></strong><br>
+				<p class="button-book" style="padding-top:5px;"><a onclick="checkform(); return false" class="btn-5"><span>ОФОРМИТЬ ЗАКАЗ</span></a></p>
+			</div>
+			<input type="hidden" name="page" value="firm_tovar">
+			<input type="hidden" name="tovar_name" value="registraciya_likvidaciya_predpriyatiy">
+			<input type="hidden" name="firm_name" value="legal_yuridicheskaya_kompaniya">
+			<input type="hidden" name="tovar_action" value="order">
+		</form>
+	</div><!--login pop-up end-->
+
+
+															<div class="counter-text">
+								<p>Просмотров Легал, юридическая компания за 30 дней: 10<br />
+								Просмотров Легал, юридическая компания с момента добавления: 1353</p>
+							</div>
+								<div class="bottom-menu clearfix">
+			<ul>
+				<li class="fst"><a title="Легал, юридическая компания в Одессе" href="/legal_yuridicheskaya_kompaniya/main" ><span>О фирме</span></a></li>
+				<li><a title="Легал, юридическая компания - Каталог продукции в Одессе" href="/legal_yuridicheskaya_kompaniya"} ><span>Каталог продукции</span></a></li>
+				<li><a title="Цены в Легал, юридическая компания - Предприятия Одессы" href="/uslugi_raznoe/registraciya_likvidaciya_predpriyatiy/legal_yuridicheskaya_kompaniya" class="active"><span>Прайс-листы</span></a></li>
+												<li class="lst"><a title="Одесса карта проезда" href="/legal_yuridicheskaya_kompaniya/contacts" ><span>Контакты</span></a></li>
+			</ul>
+		</div><!--bottom-menu end-->
+		<span class="cnrs-1-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+	</div><!--content end-->
+
+
+
+	<div class="push">&nbsp;</div>
+</div><!--out end-->
+<div class="footer">
+	<div class="ftr-inner clearfix">
+		<p class="logo-ftr">&nbsp;</p>
+		<p class="copyright">&copy; 2016&nbsp;Легал, юридическая компания<br />
+			Использование информации с сайта справочной, без обратной<br />
+			ссылки на <a title="Одесса сайт" href="/">http://08.od.ua</a>, категорически запрещено!
+		</p>
+
+		<p class="cnt-text">
+			Просмотров за сегодня: 6682<br />
+			Просмотров за месяц: 382335<br />
+		</p>
+
+		<div class="counter">
+											<a onclick="window.open('http://www.bigmir.net')"><img src="http://c.bigmir.net/?v16840041&amp;s16839405&amp;t21" alt="bigmir)net TOP 100" width="88" height="31" /></a>
+				<a onclick="window.open('http://top100.rambler.ru/home?id=1919603')"><img src="/design/default/images/rambler.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
+				<a onclick="window.open('http://www.liveinternet.ru/click')"><img src="http://counter.yadro.ru/hit?t44.6;uhttp%3A%2F%2F08.od.ua%2Flegal_yuridicheskaya_kompaniya%2Ftovar_registraciya_likvidaciya_predpriyatiy" alt="LiveInternet" width="31" height="31" /></a>
+				<a onclick="window.open('http://hit.ua/?x=107467')"><img border="0" width="1" height="1" src="http://c.hit.ua/hit?i=107467&amp;g=0&amp;x=2&amp;s=1&amp;c=1&amp;t=-120&amp;r=&amp;u=http%3A%2F%2F08.od.ua%2Flegal_yuridicheskaya_kompaniya%2Ftovar_registraciya_likvidaciya_predpriyatiy" alt="hit.ua" /></a>
+					</div>
+	</div>
+</div><!--footer end-->
+	<ul id="autocomplete_template" style="display:none"><li class="clearfix"><a onclick="return false;"><span>${phrase}</span><strong>${itemsCount} результатов</strong></a></li></ul>
+	<script type="text/javascript" src="/design/default/js/08.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript">jQuery.noConflict();</script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery.formtips.1.2.2.packed.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery.equalHeight.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/start.js"></script>
+	<img src="http://counter.rambler.ru/top100.scn?1919603" width="0" height="0" alt="" />
+	<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+	<script type="text/javascript">try{_gat._getTracker('UA-10061151-2')._trackPageview();}catch(e){}</script>
+
+
+	<script type="text/javascript">
+		 new Form.Observer('searchForm', 0.3, function(form, value){
+		  })
+		   $('searchForm').onsubmit = function() {
+		    return autocomplete.submit()
+		  }
+	</script>
+
+
+
+<script type="text/javascript">function countprice(priceUAH) {
+			var num=document.getElementById('tovarcount').value;
+			var puah = priceUAH * num;
+			document.getElementById('zakazprice').innerHTML = puah.toFixed(2) + ' грн.';
+		}
+
+		function checkform() {
+			var msg = document.getElementById('alertBox');
+
+			msg.innerHTML = '';
+			var err = 0;
+
+			if(!document.forms['orderForm'].count.value) { msg.innerHTML += "Неверное количество (не менее 1)<br />"; err = 1; }
+			if(!document.forms['orderForm'].firstName.value) { msg.innerHTML += "Укажите свое имя<br />"; err = 1;}
+			if(!document.forms['orderForm'].surname.value) { msg.innerHTML += "Укажите свое отчество<br />"; err = 1; }
+			if(!document.forms['orderForm'].secondName.value) { msg.innerHTML += "Укажите фамилию<br />"; err = 1; }
+			if(!document.forms['orderForm'].city.value) { msg.innerHTML += "Укажите название населенного пункта<br />"; err = 1; }
+			if(!document.forms['orderForm'].address.value) { msg.innerHTML += "Укажите свой адрес<br />"; err = 1; }
+			if(!document.forms['orderForm'].phoneNumber.value) { msg.innerHTML += "Укажите контактный номер телефона<br />"; err = 1; }
+			if(!document.forms['orderForm'].email.value) { msg.innerHTML += "Укажите электронный адрес<br />"; err = 1; }
+
+			if(!err) {
+				jQuery.ajax({
+					type: "GET",
+					url: "/api.php",
+					data: {
+						'section': 'site',
+						'action': 'checkBot',
+					},
+					success: function(message){
+						if (message.response.reason == 'error') {
+							err = 1;
+							msg.innerHTML += "Похоже, Вы Бот.";
+						} else {
+							document.forms['orderForm'].submit();
+						}
+					},
+				});
+			}
+		}</script>
+
+
+	<script type="text/javascript"> _shcp = []; _shcp.push({widget_id : 507357, widget : "Chat"}); (function() { var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true; hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://widget.siteheart.com/apps/js/sh.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hcc, s.nextSibling); })();</script>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	(function (d, w, c) {
+	    (w[c] = w[c] || []).push(function() {
+	        try {
+	            w.yaCounter19895821 = new Ya.Metrika({id:19895821,
+	                    webvisor:true,
+	                    clickmap:true,
+	                    trackLinks:true,
+	                    accurateTrackBounce:true});
+	        } catch(e) { }
+	    });
+
+	    var n = d.getElementsByTagName("script")[0],
+	        s = d.createElement("script"),
+	        f = function () { n.parentNode.insertBefore(s, n); };
+	    s.type = "text/javascript";
+	    s.async = true;
+	    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+	    if (w.opera == "[object Opera]") {
+	        d.addEventListener("DOMContentLoaded", f, false);
+	    } else { f(); }
+	})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="//mc.yandex.ru/watch/19895821" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+<a href="https://plus.google.com/108905381149799728781" rel="publisher author"></a>
+</body>
+</html>
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Date: 2016-12-11T14:08:53Z
+WARC-Record-ID: <urn:uuid:2dcd54d2-29ad-404a-8a41-3ee481a45f51>
+Content-Length: 20
+Content-Type: application/warc-fields
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:3eb64fb7-c7e0-4831-9b48-b8e4341de4f6>
+WARC-Target-URI: http://08.od.ua/legal_yuridicheskaya_kompaniya/tovar_registraciya_likvidaciya_predpriyatiy
+
+fetchTimeMs: 507
+
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Date: 2016-12-11T14:06:26Z
+WARC-Record-ID: <urn:uuid:a5ce8163-0200-404f-887d-e4be2ca40dff>
+Content-Length: 294
+Content-Type: application/http; msgtype=request
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-IP-Address: 213.155.18.48
+WARC-Target-URI: http://08.od.ua/produkty_pitaniya/specii/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya
+
+GET /produkty_pitaniya/specii/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya HTTP/1.0
+Host: 08.od.ua
+Accept-Encoding: x-gzip, gzip, deflate
+User-Agent: CCBot/2.0 (http://commoncrawl.org/faq/)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Date: 2016-12-11T14:06:26Z
+WARC-Record-ID: <urn:uuid:bbd0e0b3-45d0-4e7f-9f21-88875569db55>
+Content-Length: 15642
+Content-Type: application/http; msgtype=response
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:a5ce8163-0200-404f-887d-e4be2ca40dff>
+WARC-IP-Address: 213.155.18.48
+WARC-Target-URI: http://08.od.ua/produkty_pitaniya/specii/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya
+WARC-Payload-Digest: sha1:PWJTTHLLGF34EXCSND67NBAXD52BGKCM
+WARC-Block-Digest: sha1:3ZZRIL2JIZOAZT6QQIMBKPSC4FATWFHI
+WARC-Truncated: length
+
+HTTP/1.1 200 OK
+Set-Cookie: design=default; expires=Mon, 11-Dec-2017 13:19:40 GMT; path=/
+Connection: close
+Server: nginx/1.4.4
+Vary: Accept-Encoding
+Date: Sun, 11 Dec 2016 13:19:40 GMT
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="ru-RU" />
+	<meta name="description" content="Вип Степ, дистрибьютерская компания органических продуктов питания в Одессе, Продукты питания - Специи" />
+	<meta name="keywords" content="Вип Степ, дистрибьютерская компания органических продуктов питания, Одесса, Продукты питания - Специи" />
+	<title>Вип Степ, дистрибьютерская компания органических продуктов питания в Одессе, Продукты питания - Специи</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link type="image/x-icon" href="/design/default/images/spravochnaya.ico" rel="icon" />
+
+	<link href="/design/default/css/restyle/coners.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="/design/default/css/restyle/buttons.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="/design/default/css/restyle/styles.css" rel="stylesheet" type="text/css" media="screen, projection" />
+
+	<script type="text/javascript" language="javascript" src="/design/default/js/restyle/lytebox.js"></script>
+	<link rel="stylesheet" href="/design/default/css/restyle/lytebox.css" type="text/css" media="screen" />
+
+
+<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/restyle/ie.css" />
+<![endif]-->
+
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+	  { lang: 'ru' }
+	</script>
+</head>
+<body>
+<div class="out">
+	<div class="header">
+		<span class="logo"><span><a href="/" title="Справочная Одессы">Справочная Одессы</a></span></span>
+
+		<p class="tels">+ 38 048 738 08 08</p>
+
+		<div class="search-box">
+			<span class="sb-leftside">&nbsp;</span>
+			<div id="search" class="search">
+				<form id="searchForm" action="/poisk/" onsubmit="return autocomplete.submit();">
+					<input type="text" class="txt" id="autocomplete_input" value="" />
+					<img id="search_loader" alt="" src="/design/default/images/loader.gif" style="display:none;" />
+					<input id="search_button" type="submit" value="" class="butt" onclick="autocomplete.submit();" />
+				</form>
+			</div>
+								</div><!--header end-->
+
+		<span class="man">&nbsp;</span>
+
+			<div class="top-menu">
+			<ul>
+
+
+
+
+
+
+				<li class="fst"><a title="Вип Степ, дистрибьютерская компания органических продуктов питания в Одессе" href="/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya/main" >О фирме</a></li>
+				<li><a title="Вип Степ, дистрибьютерская компания органических продуктов питания - Каталог продукции в Одессе" href="/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya" >Каталог продукции</a></li>
+				<li><a title="Цены в Вип Степ, дистрибьютерская компания органических продуктов питания - Предприятия Одессы" href="/produkty_pitaniya/specii/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya" class="active">Прайс-листы</a></li>
+								<li class="lst"><a title="Карта Одесса" href="/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya/contacts" >Контакты</a></li>
+
+<li><div style="margin: 10px 20px 10px 50px;"><div class="g-plusone"></div></div></li>
+
+
+			</ul>
+			<span class="bar-left">&nbsp;</span>
+			<span class="bar-right">&nbsp;</span>
+		</div>
+	</div><!--header end-->
+	<div class="content clearfix">
+				<div id="autocomplete" style="display:none;top:-72px;left:214px;">
+					<ul id="autocomplete_container"><li></li></ul>
+					<ul><li class="clearfix"><a class="close" onclick="autocomplete.disable();">закрыть</a></li></ul>
+				</div>
+
+		<!-- Top Firm Banner -->
+
+			<!-- End Top Firm Banners -->
+
+		<div class="top-banner-place clearfix">
+
+
+			<div class="right-cont">
+				<div class="adv-text"  style="width:70%">
+					<span class="cnrs-2-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					<div class="adv-text-inner">
+						<h1>Вип Степ, дистрибьютерская компания органических продуктов питания &#8594; &#171;Специи&#187;</h1>											</div>
+					<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+				</div><!--adv-text end-->
+			</div>
+					</div>
+
+
+							<div class="adress-block clearfix">
+					<div class="adress-blk-inner">
+						<span class="cnrs-5-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+						<table class="table-style-2">
+							<tr>
+								<th>Адрес</th>
+								<th>Телефон</th>
+								<th>Режим работы</th>
+															</tr>
+																							<tr class="bold">
+										<td class="td-1"><strong>г. Одесса,&nbsp;Ул. Троицкая, 33а</strong></td>
+										<td class="td-2">7223015</td>
+										<td class="td-3"></td>
+																			</tr>
+																																						</table>
+																			<div class="site-adress-box">
+								<table>
+									<tr>
+																					<td>
+												<p><strong>Веб-сайт:</strong><br />
+												 <a onclick="window.open('http://organico.od.ua')" target="_blank">organico.od.ua</a>											</td>
+																																																											</tr>
+								</table>
+															</div>
+												<span class="cnrs-6-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					</div><!--adress-blk-inner end-->
+				</div><!--adress-block end-->
+
+
+
+<div class="price-block clearfix">
+	<div class="price_plah">
+		<span><span>Специи</span></span>
+	</div>
+						<div class="price-table-block" style="text-align:center;float:none;">
+				<span class="cnrs-2-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					<p style="font-size:14px;margin:10px;"></p>					<p style="font-size:14px;text-align:center;margin:10px;">Соусы</p>
+				<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+			</div>
+
+	<div>
+					<ul id="breadcrumb" class="clearfix">
+				<li><a href="/" title="Сайт г. Одесса">Главная</a></li>
+				<li><a title="Продукты питания в Одессе" href="/produkty_pitaniya">Продукты питания</a></li>
+				<li><a title="Специи Одесса" href="/produkty_pitaniya/specii">Специи</a></li>
+				<li class="last">Вип Степ, дистрибьютерская компания органических продуктов питания в Одессе, Продукты питания - Специи<span></li>
+			</ul>
+			</div>
+
+<div class="price-list">
+	<span class="cnrs-3-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+			<h2>Прайс-листы</h2>
+		<ul class="clearfix">
+					<li class="active"><a title=" - Каталог товаров Одесса" href="/produkty_pitaniya/specii/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya">Специи (0)</a></li>
+					<li><a title=" - Каталог товаров Одесса" href="/produkty_pitaniya/povidlo/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya">Повидло (0)</a></li>
+					<li><a title=" - Каталог товаров Одесса" href="/produkty_pitaniya/maslo/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya">Масло сливочное, растительное (0)</a></li>
+					<li><a title=" - Каталог товаров Одесса" href="/produkty_pitaniya/soki/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya">Соки (0)</a></li>
+				</ul>
+			<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+</div>
+
+							<div class="right-cont">
+					<div class="price-table-block">
+
+
+
+						<div class="post"></div>						<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					</div><!--price-table-block end-->
+				</div><!--right-block end-->
+
+		</div><!--price-block end-->
+
+
+															<div class="counter-text">
+								<p>Просмотров Вип Степ, дистрибьютерская компания органических продуктов питания за 30 дней: 66<br />
+								Просмотров Вип Степ, дистрибьютерская компания органических продуктов питания с момента добавления: 3166</p>
+							</div>
+								<div class="bottom-menu clearfix">
+			<ul>
+				<li class="fst"><a title="Вип Степ, дистрибьютерская компания органических продуктов питания в Одессе" href="/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya/main" ><span>О фирме</span></a></li>
+				<li><a title="Вип Степ, дистрибьютерская компания органических продуктов питания - Каталог продукции в Одессе" href="/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya"} ><span>Каталог продукции</span></a></li>
+				<li><a title="Цены в Вип Степ, дистрибьютерская компания органических продуктов питания - Предприятия Одессы" href="/produkty_pitaniya/specii/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya" class="active"><span>Прайс-листы</span></a></li>
+												<li class="lst"><a title="Одесса карта проезда" href="/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya/contacts" ><span>Контакты</span></a></li>
+			</ul>
+		</div><!--bottom-menu end-->
+		<span class="cnrs-1-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+	</div><!--content end-->
+
+
+
+	<div class="push">&nbsp;</div>
+</div><!--out end-->
+<div class="footer">
+	<div class="ftr-inner clearfix">
+		<p class="logo-ftr">&nbsp;</p>
+		<p class="copyright">&copy; 2016&nbsp;Вип Степ, дистрибьютерская компания органических продуктов питания<br />
+			Использование информации с сайта справочной, без обратной<br />
+			ссылки на <a title="Одесса сайт" href="/">http://08.od.ua</a>, категорически запрещено!
+		</p>
+
+		<p class="cnt-text">
+			Просмотров за сегодня: 6643<br />
+			Просмотров за месяц: 382296<br />
+		</p>
+
+		<div class="counter">
+											<a onclick="window.open('http://www.bigmir.net')"><img src="http://c.bigmir.net/?v16840041&amp;s16839405&amp;t21" alt="bigmir)net TOP 100" width="88" height="31" /></a>
+				<a onclick="window.open('http://top100.rambler.ru/home?id=1919603')"><img src="/design/default/images/rambler.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
+				<a onclick="window.open('http://www.liveinternet.ru/click')"><img src="http://counter.yadro.ru/hit?t44.6;uhttp%3A%2F%2F08.od.ua%2Fprodukty_pitaniya%2Fspecii%2Fvip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya" alt="LiveInternet" width="31" height="31" /></a>
+				<a onclick="window.open('http://hit.ua/?x=107467')"><img border="0" width="1" height="1" src="http://c.hit.ua/hit?i=107467&amp;g=0&amp;x=2&amp;s=1&amp;c=1&amp;t=-120&amp;r=&amp;u=http%3A%2F%2F08.od.ua%2Fprodukty_pitaniya%2Fspecii%2Fvip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya" alt="hit.ua" /></a>
+					</div>
+	</div>
+</div><!--footer end-->
+	<ul id="autocomplete_template" style="display:none"><li class="clearfix"><a onclick="return false;"><span>${phrase}</span><strong>${itemsCount} результатов</strong></a></li></ul>
+	<script type="text/javascript" src="/design/default/js/08.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript">jQuery.noConflict();</script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery.formtips.1.2.2.packed.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery.equalHeight.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/start.js"></script>
+	<img src="http://counter.rambler.ru/top100.scn?1919603" width="0" height="0" alt="" />
+	<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+	<script type="text/javascript">try{_gat._getTracker('UA-10061151-2')._trackPageview();}catch(e){}</script>
+
+
+	<script type="text/javascript">
+		 new Form.Observer('searchForm', 0.3, function(form, value){
+		  })
+		   $('searchForm').onsubmit = function() {
+		    return autocomplete.submit()
+		  }
+	</script>
+
+
+
+
+	<script type="text/javascript"> _shcp = []; _shcp.push({widget_id : 507357, widget : "Chat"}); (function() { var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true; hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://widget.siteheart.com/apps/js/sh.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hcc, s.nextSibling); })();</script>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	(function (d, w, c) {
+	    (w[c] = w[c] || []).push(function() {
+	        try {
+	            w.yaCounter19895821 = new Ya.Metrika({id:19895821,
+	                    webvisor:true,
+	                    clickmap:true,
+	                    trackLinks:true,
+	                    accurateTrackBounce:true});
+	        } catch(e) { }
+	    });
+
+	    var n = d.getElementsByTagName("script")[0],
+	        s = d.createElement("script"),
+	        f = function () { n.parentNode.insertBefore(s, n); };
+	    s.type = "text/javascript";
+	    s.async = true;
+	    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+	    if (w.opera == "[object Opera]") {
+	        d.addEventListener("DOMContentLoaded", f, false);
+	    } else { f(); }
+	})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="//mc.yandex.ru/watch/19895821" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+<a href="https://plus.google.com/108905381149799728781" rel="publisher author"></a>
+</body>
+</html>
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Date: 2016-12-11T14:06:26Z
+WARC-Record-ID: <urn:uuid:240be71e-0f62-47f0-8f8b-43ec39c88f6c>
+Content-Length: 20
+Content-Type: application/warc-fields
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:bbd0e0b3-45d0-4e7f-9f21-88875569db55>
+WARC-Target-URI: http://08.od.ua/produkty_pitaniya/specii/vip_step_distribyuterskaya_kompaniya_organicheskih_produktov_pitaniya
+
+fetchTimeMs: 519
+
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Date: 2016-12-11T13:54:37Z
+WARC-Record-ID: <urn:uuid:7767f988-79da-488e-996a-0b39b85bf5f2>
+Content-Length: 244
+Content-Type: application/http; msgtype=request
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-IP-Address: 213.155.18.48
+WARC-Target-URI: http://08.od.ua/stroymaterialy/pilomaterialy/les_ooo_lis_ooo
+
+GET /stroymaterialy/pilomaterialy/les_ooo_lis_ooo HTTP/1.0
+Host: 08.od.ua
+Accept-Encoding: x-gzip, gzip, deflate
+User-Agent: CCBot/2.0 (http://commoncrawl.org/faq/)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Date: 2016-12-11T13:54:37Z
+WARC-Record-ID: <urn:uuid:fa42a0b1-be31-420e-9acc-133c5fde0264>
+Content-Length: 16042
+Content-Type: application/http; msgtype=response
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:7767f988-79da-488e-996a-0b39b85bf5f2>
+WARC-IP-Address: 213.155.18.48
+WARC-Target-URI: http://08.od.ua/stroymaterialy/pilomaterialy/les_ooo_lis_ooo
+WARC-Payload-Digest: sha1:FMPEPMTWKD3YKRF76EUODBKHCY4VAABP
+WARC-Block-Digest: sha1:YQICPN5F5IALIV3X2ND4LOU5TIHAMZPJ
+WARC-Truncated: length
+
+HTTP/1.1 200 OK
+Set-Cookie: design=default; expires=Mon, 11-Dec-2017 13:07:50 GMT; path=/
+Connection: close
+Server: nginx/1.4.4
+Vary: Accept-Encoding
+Date: Sun, 11 Dec 2016 13:07:50 GMT
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="ru-RU" />
+	<meta name="description" content="Лес, ооо (лис, ооо) в Одессе, Стройматериалы - Пиломатериалы" />
+	<meta name="keywords" content="Лес, ооо (лис, ооо), Одесса, Стройматериалы - Пиломатериалы" />
+	<title>Лес, ооо (лис, ооо) в Одессе, Стройматериалы - Пиломатериалы</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link type="image/x-icon" href="/design/default/images/spravochnaya.ico" rel="icon" />
+
+	<link href="/design/default/css/restyle/coners.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="/design/default/css/restyle/buttons.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="/design/default/css/restyle/styles.css" rel="stylesheet" type="text/css" media="screen, projection" />
+
+	<script type="text/javascript" language="javascript" src="/design/default/js/restyle/lytebox.js"></script>
+	<link rel="stylesheet" href="/design/default/css/restyle/lytebox.css" type="text/css" media="screen" />
+
+
+<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/restyle/ie.css" />
+<![endif]-->
+
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+	  { lang: 'ru' }
+	</script>
+</head>
+<body>
+<div class="out">
+	<div class="header">
+		<span class="logo"><span><a href="/" title="Справочная Одессы">Справочная Одессы</a></span></span>
+
+		<p class="tels">+ 38 048 738 08 08</p>
+
+		<div class="search-box">
+			<span class="sb-leftside">&nbsp;</span>
+			<div id="search" class="search">
+				<form id="searchForm" action="/poisk/" onsubmit="return autocomplete.submit();">
+					<input type="text" class="txt" id="autocomplete_input" value="" />
+					<img id="search_loader" alt="" src="/design/default/images/loader.gif" style="display:none;" />
+					<input id="search_button" type="submit" value="" class="butt" onclick="autocomplete.submit();" />
+				</form>
+			</div>
+								</div><!--header end-->
+
+		<span class="man">&nbsp;</span>
+
+						<div class="top-menu">
+			<ul>
+
+
+
+
+
+
+				<li class="fst"><a title="Лес, ооо (лис, ооо) в Одессе" href="/les_ooo_lis_ooo/main" >О фирме</a></li>
+				<li><a title="Лес, ооо (лис, ооо) - Каталог продукции в Одессе" href="/les_ooo_lis_ooo" >Каталог продукции</a></li>
+				<li><a title="Цены в Лес, ооо (лис, ооо) - Предприятия Одессы" href="/les_ooo_lis_ooo/price/93558" class="active">Прайс-листы</a></li>
+								<li><a title="Карта Одесса" href="/les_ooo_lis_ooo/contacts" >Контакты</a></li>
+
+<li><div style="margin: 10px 20px 10px 50px;"><div class="g-plusone"></div></div></li>
+
+
+			</ul>
+			<span class="bar-left">&nbsp;</span>
+			<span class="bar-right">&nbsp;</span>
+		</div>
+	</div><!--header end-->
+	<div class="content clearfix">
+				<div id="autocomplete" style="display:none;top:-72px;left:214px;">
+					<ul id="autocomplete_container"><li></li></ul>
+					<ul><li class="clearfix"><a class="close" onclick="autocomplete.disable();">закрыть</a></li></ul>
+				</div>
+
+		<!-- Top Firm Banner -->
+
+			<!-- End Top Firm Banners -->
+
+		<div class="top-banner-place clearfix">
+
+
+			<div class="right-cont">
+				<div class="adv-text"  style="width:70%">
+					<span class="cnrs-2-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					<div class="adv-text-inner">
+						<h1>Лес, ооо (лис, ооо) &#8594; &#171;Пиломатериалы&#187;</h1>											</div>
+					<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+				</div><!--adv-text end-->
+			</div>
+					</div>
+
+
+							<div class="adress-block clearfix">
+					<div class="adress-blk-inner">
+						<span class="cnrs-5-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+						<table class="table-style-2">
+							<tr>
+								<th>Адрес</th>
+								<th>Телефон</th>
+								<th>Режим работы</th>
+															</tr>
+																							<tr class="bold">
+										<td class="td-1"><strong>г. Одесса,&nbsp;Ул. Бугаевская, 58</strong></td>
+										<td class="td-2">7222888</td>
+										<td class="td-3">Пн-сб с 8 до 17</td>
+																			</tr>
+																																						</table>
+																			<div class="site-adress-box">
+								<table>
+									<tr>
+																					<td>
+												<p><strong>Веб-сайт:</strong><br />
+												 <a onclick="window.open('http://odessa-lis.all.biz')" target="_blank">odessa-lis.all.biz</a>											</td>
+																																																											</tr>
+								</table>
+															</div>
+												<span class="cnrs-6-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					</div><!--adress-blk-inner end-->
+				</div><!--adress-block end-->
+
+
+
+<div class="price-block clearfix">
+	<div class="price_plah">
+		<span><span>Пиломатериалы</span></span>
+	</div>
+						<div class="price-table-block" style="text-align:center;float:none;">
+				<span class="cnrs-2-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					<p style="font-size:14px;margin:10px;"></p>					<p style="font-size:14px;text-align:center;margin:10px;">Пиломатериалы:<br />
+Доска обрезная<br />
+Доска необрезная<br />
+Брус<br />
+Доска пола (сосна)</p>
+				<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+			</div>
+
+	<div>
+					<ul id="breadcrumb" class="clearfix">
+				<li><a href="/" title="Сайт г. Одесса">Главная</a></li>
+				<li><a title="Стройматериалы в Одессе" href="/stroymaterialy">Стройматериалы</a></li>
+				<li><a title="Пиломатериалы Одесса" href="/stroymaterialy/pilomaterialy">Пиломатериалы</a></li>
+				<li class="last">Лес, ооо (лис, ооо) в Одессе, Стройматериалы - Пиломатериалы<span></li>
+			</ul>
+			</div>
+
+<div class="price-list">
+	<span class="cnrs-3-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+			<h2>Прайс-листы</h2>
+		<ul class="clearfix">
+					<li><a title="Лиственница - Каталог товаров Одесса" href="/les_ooo_lis_ooo/price/93558">Лиственница (9)</a></li>
+					<li><a title="Пиломатериалы сухие - Каталог товаров Одесса" href="/les_ooo_lis_ooo/price/93557">Пиломатериалы сухие (7)</a></li>
+					<li><a title="Доска необрезная - Каталог товаров Одесса" href="/les_ooo_lis_ooo/price/93556">Доска необрезная (8)</a></li>
+					<li><a title="Брус - Каталог товаров Одесса" href="/les_ooo_lis_ooo/price/93555">Брус (3)</a></li>
+					<li><a title="Доска обрезная - Каталог товаров Одесса" href="/les_ooo_lis_ooo/price/93554">Доска обрезная (12)</a></li>
+					<li><a title=" - Каталог товаров Одесса" href="/otdelochnye_materialy/antiseptiki_propitki_sredstva_dlya_drevesiny/les_ooo_lis_ooo">Антисептики, пропитки, средства для древесины (0)</a></li>
+					<li class="active"><a title=" - Каталог товаров Одесса" href="/stroymaterialy/pilomaterialy/les_ooo_lis_ooo">Пиломатериалы (1)</a></li>
+					<li><a title="Металлические крепления - Каталог товаров Одесса" href="/les_ooo_lis_ooo/price/95254">Металлические крепления (4)</a></li>
+					<li><a title="Рейка - Каталог товаров Одесса" href="/les_ooo_lis_ooo/price/97250">Рейка (1)</a></li>
+					<li><a title="Вагонка - Каталог товаров Одесса" href="/les_ooo_lis_ooo/price/98839">Вагонка (5)</a></li>
+				</ul>
+			<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+</div>
+
+							<div class="right-cont">
+					<div class="price-table-block">
+																																																																				    <span class="cnrs-3-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+							    <table class="table-style-1">
+									<tr>
+										<th>Название</th>
+										<th>Фото</th>
+										<th>Описание</th>
+																			</tr>
+									<tr>
+										<td class="td-1">
+											<div>
+																									<a title="Опилки, стружка купить в Одессе" href="/les_ooo_lis_ooo/tovar_opilki_struzhka">Опилки, стружка</a>
+																							</div>
+										</td>
+										<td class="td-2">
+
+												<div>
+													<a href="/les_ooo_lis_ooo/tovar_opilki_struzhka"><img src="/cache/f/d/8/8/2c2f3c849bdd6b13c48d2f04356e.jpg" alt="Опилки, стружка" name="Опилки, стружка" style="border: 2px solid #d3d3d3" /></a>
+												</div>
+																					</td>
+										<td class="td-3"><div></div></td>
+																			</tr>
+								</table>
+
+
+
+						<div class="post"><p style="text-align: center;"><img src="http://08.od.ua/data/price/lis/222.jpg" alt="" width="950" height="2098" /></p></div>						<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					</div><!--price-table-block end-->
+				</div><!--right-block end-->
+
+		</div><!--price-block end-->
+
+
+															<div class="counter-text">
+								<p>Просмотров Лес, ооо (лис, ооо) за 30 дней: 113<br />
+								Просмотров Лес, ооо (лис, ооо) с момента добавления: 11849</p>
+							</div>
+								<div class="bottom-menu clearfix">
+			<ul>
+				<li class="fst"><a title="Лес, ооо (лис, ооо) в Одессе" href="/les_ooo_lis_ooo/main" ><span>О фирме</span></a></li>
+				<li><a title="Лес, ооо (лис, ооо) - Каталог продукции в Одессе" href="/les_ooo_lis_ooo"} ><span>Каталог продукции</span></a></li>
+				<li><a title="Цены в Лес, ооо (лис, ооо) - Предприятия Одессы" href="/les_ooo_lis_ooo/price/93558" class="active"><span>Прайс-листы</span></a></li>
+												<li><a title="Одесса карта проезда" href="/les_ooo_lis_ooo/contacts" ><span>Контакты</span></a></li>
+			</ul>
+		</div><!--bottom-menu end-->
+		<span class="cnrs-1-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+	</div><!--content end-->
+
+
+
+	<div class="push">&nbsp;</div>
+</div><!--out end-->
+<div class="footer">
+	<div class="ftr-inner clearfix">
+		<p class="logo-ftr">&nbsp;</p>
+		<p class="copyright">&copy; 2016&nbsp;Лес, ооо (лис, ооо)<br />
+			Использование информации с сайта справочной, без обратной<br />
+			ссылки на <a title="Одесса сайт" href="/">http://08.od.ua</a>, категорически запрещено!
+		</p>
+
+		<p class="cnt-text">
+			Просмотров за сегодня: 6458<br />
+			Просмотров за месяц: 382111<br />
+		</p>
+
+		<div class="counter">
+											<a onclick="window.open('http://www.bigmir.net')"><img src="http://c.bigmir.net/?v16840041&amp;s16839405&amp;t21" alt="bigmir)net TOP 100" width="88" height="31" /></a>
+				<a onclick="window.open('http://top100.rambler.ru/home?id=1919603')"><img src="/design/default/images/rambler.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
+				<a onclick="window.open('http://www.liveinternet.ru/click')"><img src="http://counter.yadro.ru/hit?t44.6;uhttp%3A%2F%2F08.od.ua%2Fstroymaterialy%2Fpilomaterialy%2Fles_ooo_lis_ooo" alt="LiveInternet" width="31" height="31" /></a>
+				<a onclick="window.open('http://hit.ua/?x=107467')"><img border="0" width="1" height="1" src="http://c.hit.ua/hit?i=107467&amp;g=0&amp;x=2&amp;s=1&amp;c=1&amp;t=-120&amp;r=&amp;u=http%3A%2F%2F08.od.ua%2Fstroymaterialy%2Fpilomaterialy%2Fles_ooo_lis_ooo" alt="hit.ua" /></a>
+					</div>
+	</div>
+</div><!--footer end-->
+	<ul id="autocomplete_template" style="display:none"><li class="clearfix"><a onclick="return false;"><span>${phrase}</span><strong>${itemsCount} результатов</strong></a></li></ul>
+	<script type="text/javascript" src="/design/default/js/08.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript">jQuery.noConflict();</script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery.formtips.1.2.2.packed.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery.equalHeight.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/start.js"></script>
+	<img src="http://counter.rambler.ru/top100.scn?1919603" width="0" height="0" alt="" />
+	<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+	<script type="text/javascript">try{_gat._getTracker('UA-10061151-2')._trackPageview();}catch(e){}</script>
+
+
+	<script type="text/javascript">
+		 new Form.Observer('searchForm', 0.3, function(form, value){
+		  })
+		   $('searchForm').onsubmit = function() {
+		    return autocomplete.submit()
+		  }
+	</script>
+
+
+
+
+	<script type="text/javascript"> _shcp = []; _shcp.push({widget_id : 507357, widget : "Chat"}); (function() { var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true; hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://widget.siteheart.com/apps/js/sh.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hcc, s.nextSibling); })();</script>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	(function (d, w, c) {
+	    (w[c] = w[c] || []).push(function() {
+	        try {
+	            w.yaCounter19895821 = new Ya.Metrika({id:19895821,
+	                    webvisor:true,
+	                    clickmap:true,
+	                    trackLinks:true,
+	                    accurateTrackBounce:true});
+	        } catch(e) { }
+	    });
+
+	    var n = d.getElementsByTagName("script")[0],
+	        s = d.createElement("script"),
+	        f = function () { n.parentNode.insertBefore(s, n); };
+	    s.type = "text/javascript";
+	    s.async = true;
+	    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+	    if (w.opera == "[object Opera]") {
+	        d.addEventListener("DOMContentLoaded", f, false);
+	    } else { f(); }
+	})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="//mc.yandex.ru/watch/19895821" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+<a href="https://plus.google.com/108905381149799728781" rel="publisher author"></a>
+</body>
+</html>
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Date: 2016-12-11T13:54:37Z
+WARC-Record-ID: <urn:uuid:389b7697-399d-4ae2-9edc-7c680068f2a4>
+Content-Length: 20
+Content-Type: application/warc-fields
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:fa42a0b1-be31-420e-9acc-133c5fde0264>
+WARC-Target-URI: http://08.od.ua/stroymaterialy/pilomaterialy/les_ooo_lis_ooo
+
+fetchTimeMs: 516
+
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Date: 2016-12-11T14:08:36Z
+WARC-Record-ID: <urn:uuid:e632d541-648d-4d70-925b-53277474e6f0>
+Content-Length: 241
+Content-Type: application/http; msgtype=request
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-IP-Address: 213.155.18.48
+WARC-Target-URI: http://08.od.ua/svoboda_vseukrainskoe_obedinenie/contacts
+
+GET /svoboda_vseukrainskoe_obedinenie/contacts HTTP/1.0
+Host: 08.od.ua
+Accept-Encoding: x-gzip, gzip, deflate
+User-Agent: CCBot/2.0 (http://commoncrawl.org/faq/)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Date: 2016-12-11T14:08:36Z
+WARC-Record-ID: <urn:uuid:88737616-a692-49bb-9265-1d0522f14575>
+Content-Length: 11576
+Content-Type: application/http; msgtype=response
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:e632d541-648d-4d70-925b-53277474e6f0>
+WARC-IP-Address: 213.155.18.48
+WARC-Target-URI: http://08.od.ua/svoboda_vseukrainskoe_obedinenie/contacts
+WARC-Payload-Digest: sha1:OJQLP3IBNRTJTF3U4HEZQ24ETE2DZMCQ
+WARC-Block-Digest: sha1:Q6EEMLUSOMRC77UBE34TB6TRDT6MGQD4
+WARC-Truncated: length
+
+HTTP/1.1 200 OK
+Set-Cookie: design=default; expires=Mon, 11-Dec-2017 13:21:49 GMT; path=/
+Connection: close
+Server: nginx/1.4.4
+Vary: Accept-Encoding
+Date: Sun, 11 Dec 2016 13:21:49 GMT
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="ru-RU" />
+	<meta name="description" content="Свобода, всеукраинское объединение в Одессе - Контакты" />
+	<meta name="keywords" content="Свобода, всеукраинское объединение, Одесса" />
+	<title>Свобода, всеукраинское объединение в Одессе - Контакты</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link type="image/x-icon" href="/design/default/images/spravochnaya.ico" rel="icon" />
+
+	<link href="/design/default/css/restyle/coners.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="/design/default/css/restyle/buttons.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	<link href="/design/default/css/restyle/styles.css" rel="stylesheet" type="text/css" media="screen, projection" />
+
+	<script type="text/javascript" language="javascript" src="/design/default/js/restyle/lytebox.js"></script>
+	<link rel="stylesheet" href="/design/default/css/restyle/lytebox.css" type="text/css" media="screen" />
+
+
+<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/restyle/ie.css" />
+<![endif]-->
+
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+	  { lang: 'ru' }
+	</script>
+</head>
+<body>
+<div class="out">
+	<div class="header">
+		<span class="logo"><span><a href="/" title="Справочная Одессы">Справочная Одессы</a></span></span>
+
+		<p class="tels">+ 38 048 738 08 08</p>
+
+		<div class="search-box">
+			<span class="sb-leftside">&nbsp;</span>
+			<div id="search" class="search">
+				<form id="searchForm" action="/poisk/" onsubmit="return autocomplete.submit();">
+					<input type="text" class="txt" id="autocomplete_input" value="" />
+					<img id="search_loader" alt="" src="/design/default/images/loader.gif" style="display:none;" />
+					<input id="search_button" type="submit" value="" class="butt" onclick="autocomplete.submit();" />
+				</form>
+			</div>
+								</div><!--header end-->
+
+		<span class="man">&nbsp;</span>
+
+			<div class="top-menu">
+			<ul>
+
+
+
+
+
+
+				<li class="fst"><a title="Свобода, всеукраинское объединение в Одессе" href="/svoboda_vseukrainskoe_obedinenie/main" >О фирме</a></li>
+				<li><a title="Свобода, всеукраинское объединение - Каталог продукции в Одессе" href="/svoboda_vseukrainskoe_obedinenie" >Каталог продукции</a></li>
+				<li><a title="Цены в Свобода, всеукраинское объединение - Предприятия Одессы" href="/gorodskie_sluzhby/partii/svoboda_vseukrainskoe_obedinenie" >Прайс-листы</a></li>
+								<li class="lst"><a title="Карта Одесса" href="/svoboda_vseukrainskoe_obedinenie/contacts" class="active">Контакты</a></li>
+
+<li><div style="margin: 10px 20px 10px 50px;"><div class="g-plusone"></div></div></li>
+
+
+			</ul>
+			<span class="bar-left">&nbsp;</span>
+			<span class="bar-right">&nbsp;</span>
+		</div>
+	</div><!--header end-->
+	<div class="content clearfix">
+				<div id="autocomplete" style="display:none;top:-72px;left:214px;">
+					<ul id="autocomplete_container"><li></li></ul>
+					<ul><li class="clearfix"><a class="close" onclick="autocomplete.disable();">закрыть</a></li></ul>
+				</div>
+
+		<!-- Top Firm Banner -->
+
+			<!-- End Top Firm Banners -->
+
+		<div class="top-banner-place clearfix">
+
+
+			<div class="right-cont">
+				<div class="adv-text"  style="width:70%">
+					<span class="cnrs-2-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					<div class="adv-text-inner">
+						<h1>Свобода, всеукраинское объединение &#171;Контакты&#187;</h1>											</div>
+					<span class="cnrs-2-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+				</div><!--adv-text end-->
+			</div>
+					</div>
+
+
+			<div class="address_block clearfix" style="margin:10px;">
+			<div class="adress-blk-inner">
+
+				<table cellpadding="0" cellspacing="0" width="100%" style="margin:10px;">
+					<tr>
+											</tr>
+				</table>
+			</div>
+		</div>
+							<div class="adress-block clearfix">
+					<div class="adress-blk-inner">
+						<span class="cnrs-5-top"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+						<table class="table-style-2">
+							<tr>
+								<th>Адрес</th>
+								<th>Телефон</th>
+								<th>Режим работы</th>
+															</tr>
+																							<tr class="bold">
+										<td class="td-1"><strong>г. Одесса,&nbsp;Ул. Канатная, 83</strong></td>
+										<td class="td-2">7015463</td>
+										<td class="td-3"></td>
+																			</tr>
+																					</table>
+																		<span class="cnrs-6-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+					</div><!--adress-blk-inner end-->
+				</div><!--adress-block end-->
+
+
+
+
+
+															<div class="counter-text">
+								<p>Просмотров Свобода, всеукраинское объединение за 30 дней: 41<br />
+								Просмотров Свобода, всеукраинское объединение с момента добавления: 2101</p>
+							</div>
+								<div class="bottom-menu clearfix">
+			<ul>
+				<li class="fst"><a title="Свобода, всеукраинское объединение в Одессе" href="/svoboda_vseukrainskoe_obedinenie/main" ><span>О фирме</span></a></li>
+				<li><a title="Свобода, всеукраинское объединение - Каталог продукции в Одессе" href="/svoboda_vseukrainskoe_obedinenie"} ><span>Каталог продукции</span></a></li>
+				<li><a title="Цены в Свобода, всеукраинское объединение - Предприятия Одессы" href="/gorodskie_sluzhby/partii/svoboda_vseukrainskoe_obedinenie" ><span>Прайс-листы</span></a></li>
+												<li class="lst"><a title="Одесса карта проезда" href="/svoboda_vseukrainskoe_obedinenie/contacts" class="active"><span>Контакты</span></a></li>
+			</ul>
+		</div><!--bottom-menu end-->
+		<span class="cnrs-1-bott"><em class="lft">&nbsp;</em><em class="rgt">&nbsp;</em></span>
+	</div><!--content end-->
+
+
+
+	<div class="push">&nbsp;</div>
+</div><!--out end-->
+<div class="footer">
+	<div class="ftr-inner clearfix">
+		<p class="logo-ftr">&nbsp;</p>
+		<p class="copyright">&copy; 2016&nbsp;Свобода, всеукраинское объединение<br />
+			Использование информации с сайта справочной, без обратной<br />
+			ссылки на <a title="Одесса сайт" href="/">http://08.od.ua</a>, категорически запрещено!
+		</p>
+
+		<p class="cnt-text">
+			Просмотров за сегодня: 6677<br />
+			Просмотров за месяц: 382330<br />
+		</p>
+
+		<div class="counter">
+											<a onclick="window.open('http://www.bigmir.net')"><img src="http://c.bigmir.net/?v16840041&amp;s16839405&amp;t21" alt="bigmir)net TOP 100" width="88" height="31" /></a>
+				<a onclick="window.open('http://top100.rambler.ru/home?id=1919603')"><img src="/design/default/images/rambler.gif" alt="Rambler's Top100" width="88" height="31" border="0" /></a>
+				<a onclick="window.open('http://www.liveinternet.ru/click')"><img src="http://counter.yadro.ru/hit?t44.6;uhttp%3A%2F%2F08.od.ua%2Fsvoboda_vseukrainskoe_obedinenie%2Fcontacts" alt="LiveInternet" width="31" height="31" /></a>
+				<a onclick="window.open('http://hit.ua/?x=107467')"><img border="0" width="1" height="1" src="http://c.hit.ua/hit?i=107467&amp;g=0&amp;x=2&amp;s=1&amp;c=1&amp;t=-120&amp;r=&amp;u=http%3A%2F%2F08.od.ua%2Fsvoboda_vseukrainskoe_obedinenie%2Fcontacts" alt="hit.ua" /></a>
+					</div>
+	</div>
+</div><!--footer end-->
+	<ul id="autocomplete_template" style="display:none"><li class="clearfix"><a onclick="return false;"><span>${phrase}</span><strong>${itemsCount} результатов</strong></a></li></ul>
+	<script type="text/javascript" src="/design/default/js/08.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript">jQuery.noConflict();</script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery.formtips.1.2.2.packed.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/jquery.equalHeight.js"></script>
+	<script type="text/javascript" src="/design/default/js/restyle/start.js"></script>
+	<img src="http://counter.rambler.ru/top100.scn?1919603" width="0" height="0" alt="" />
+	<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+	<script type="text/javascript">try{_gat._getTracker('UA-10061151-2')._trackPageview();}catch(e){}</script>
+
+
+	<script type="text/javascript">
+		 new Form.Observer('searchForm', 0.3, function(form, value){
+		  })
+		   $('searchForm').onsubmit = function() {
+		    return autocomplete.submit()
+		  }
+	</script>
+
+
+
+
+	<script type="text/javascript"> _shcp = []; _shcp.push({widget_id : 507357, widget : "Chat"}); (function() { var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true; hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://widget.siteheart.com/apps/js/sh.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hcc, s.nextSibling); })();</script>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	(function (d, w, c) {
+	    (w[c] = w[c] || []).push(function() {
+	        try {
+	            w.yaCounter19895821 = new Ya.Metrika({id:19895821,
+	                    webvisor:true,
+	                    clickmap:true,
+	                    trackLinks:true,
+	                    accurateTrackBounce:true});
+	        } catch(e) { }
+	    });
+
+	    var n = d.getElementsByTagName("script")[0],
+	        s = d.createElement("script"),
+	        f = function () { n.parentNode.insertBefore(s, n); };
+	    s.type = "text/javascript";
+	    s.async = true;
+	    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+	    if (w.opera == "[object Opera]") {
+	        d.addEventListener("DOMContentLoaded", f, false);
+	    } else { f(); }
+	})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="//mc.yandex.ru/watch/19895821" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+<a href="https://plus.google.com/108905381149799728781" rel="publisher author"></a>
+</body>
+</html>
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Date: 2016-12-11T14:08:36Z
+WARC-Record-ID: <urn:uuid:4807da44-f859-447e-bc6c-a7fc723302b9>
+Content-Length: 20
+Content-Type: application/warc-fields
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:88737616-a692-49bb-9265-1d0522f14575>
+WARC-Target-URI: http://08.od.ua/svoboda_vseukrainskoe_obedinenie/contacts
+
+fetchTimeMs: 506
+
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Date: 2016-12-11T13:48:17Z
+WARC-Record-ID: <urn:uuid:6a5e7d96-81b0-4ed6-90ee-e2397aa6f3dc>
+Content-Length: 200
+Content-Type: application/http; msgtype=request
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-IP-Address: 184.95.38.196
+WARC-Target-URI: http://0800z.be/
+
+GET / HTTP/1.0
+Host: 0800z.be
+Accept-Encoding: x-gzip, gzip, deflate
+User-Agent: CCBot/2.0 (http://commoncrawl.org/faq/)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Date: 2016-12-11T13:48:17Z
+WARC-Record-ID: <urn:uuid:a7f40238-974e-4fdc-bc01-7b39c55053da>
+Content-Length: 2901
+Content-Type: application/http; msgtype=response
+WARC-Warcinfo-ID: <urn:uuid:c0a23144-698b-4bd0-8800-6fed27a35019>
+WARC-Concurrent-To: <urn:uuid:6a5e7d96-81b0-4ed6-90ee-e2397aa6f3dc>
+WARC-IP-Address: 184.95.38.196
+WARC-Target-URI: http://0800z.be/
+WARC-Payload-Digest: sha1:UEEEEHO3NRAHTYVPY67YKWF7QKWCRYUV
+WARC-Block-Digest: sha1:E3GQ64AVXQXBSHXPJJ7X2JLZUBKYK7SX
+
+HTTP/1.1 200 OK
+Content-Length: 2586
+Expires: Tue, 13 Dec 2016 13:48:17 GMT
+Connection: close
+X-Powered-By: PHP/5.3.3
+Server: Apache/2.2.15 (CentOS)
+Cache-Control: no-cache, must-revalidate, max-age=172800
+Vary: Accept-Encoding
+Date: Sun, 11 Dec 2016 13:48:17 GMT
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>0800z.be - Domain parked by Europe Registry</title>
+		<meta name="description" content="Europe Registry is your European wide domain name registrar providing complete coveragage of European ccTLD domain names including .eu .de .nl .be .es .uk .it .se .ch .pl .at and more member states." />
+		<meta name="keywords" content="domain names, domain registration, europe, italy, eu domain, spain, germany, holland, domainnames, eurid, ccTLD, gTLD, domaining, .eu, .de, .nl, .be, .es, .uk, .it, .se, .ch, .pl, .at, com.au, co.nz, au domains, nz domains, enum, enum registration, web hosting, domain name, web site, web design, domain name registration, corporate domain name management, small business, cheap web hosting, webmaster, web site builder, web space, affordable web hosting, marketing, advertising, blog, blogs, blogger, weblog, we" />
+                <script type="text/JavaScript" src="jquery.min.js"></script>
+		<style>
+			*{margin:0 auto;padding:0}
+			html, body {height:100%;width:100%;overflow:hidden; font-family: Verdana, Arial, sans-serif;}
+			table {height:100%;width:100%;table-layout:static;border-collapse:collapse}
+			iframe {height:100%;width:100%}
+			img { border: none; }
+			.header {border-bottom:0px solid #000; text-align:center;};
+			.content {height:100%}
+			.logo {padding:10px}
+		</style>
+	</head>
+	<body>
+		<table style="position:absolute;top:0;left:0;right:0;bottom:0">
+			<tr>
+				<td class="header">
+					<table>
+						<tr class="header">
+							<td>
+								<div style="display:block;width:1000px;">
+								<span style="width:500px;display:table-cell">
+									<a href="http://www.europeregistry.com/?utm_medium=free_parking&utm_source=0800z.be" ><img src="img/europe.png" alt="Europe Registry" class="logo"/></a>
+								</span>
+								<span style="vertical-align:middle;width:500px;display:table-cell">
+									<h2>Domain Parked with Europe Registry</h2>
+								</span>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr style="height:100%">
+				<td class="content" style="text-align:center">
+					<span style="font-family: Arial,Helvetica Neue,Helvetica,sans-serif;font-weight:bold;text-align:center;display:block">
+						Click <a href="http://www.europeregistry.com/?utm_medium=free_parking&utm_source=0800z.be">here</a> to visit the Europe Registry website.
+					</span>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
+

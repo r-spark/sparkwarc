@@ -1,0 +1,51 @@
+---
+title: "Read WARC file from CommonCrawl.org in sparklyr"
+output:
+  github_document:
+    fig_width: 9
+    fig_height: 5
+---
+
+```{r}
+library(sparkwarc)
+library(sparklyr)
+library(DBI)
+library(dplyr)
+```
+
+```{r}
+sc <- spark_connect(master = "local", version = "2.0.1")
+df <- spark_read_warc(sc, system.file("samples/sample.warc.gz", package = "sparkwarc"))
+sdf <- sdf_register(df, "warc")
+```
+
+```{sql connection=sc, max.print=10}
+SELECT substr(regexp_replace(value, '\n', '~'), 0, 60) as entry
+FROM WARC
+WHERE length(value) > 0
+LIMIT 10
+```
+
+```{sql connection=sc, max.print=1}
+SELECT count(value)
+FROM WARC
+WHERE length(regexp_extract(value, '<html', 0)) > 0
+```
+
+```{r}
+spark_regexp_stats <- function(tbl, regval) {
+  tbl %>%
+    transmute(language = regexp_extract(value, regval, 1)) %>%
+    group_by(language) %>%
+    summarize(n = n())
+}
+```
+
+```{r}
+regexpLang <- "http-equiv=\"Content-Language\" content=\"(.*)\""
+tbl(sc, "warc") %>% spark_regexp_stats(regexpLang)
+```
+
+```{r}
+spark_disconnect(sc)
+```
