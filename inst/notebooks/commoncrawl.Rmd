@@ -20,7 +20,7 @@ sdf <- sdf_register(df, "warc")
 ```
 
 ```{sql connection=sc, max.print=10}
-SELECT substr(regexp_replace(value, '\n', '~'), 0, 60) as entry
+SELECT substr(value, 0, 60) as entry
 FROM WARC
 WHERE length(value) > 0
 LIMIT 10
@@ -42,7 +42,7 @@ spark_regexp_stats <- function(tbl, regval) {
 ```
 
 ```{r}
-regexpLang <- "http-equiv=\"Content-Language\" content=\"(.*)\""
+regexpLang <- "http-equiv=\"Content-Language\" content=\"([^\\\"]*)\""
 tbl(sc, "warc") %>% spark_regexp_stats(regexpLang)
 ```
 
