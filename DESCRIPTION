@@ -1,7 +1,7 @@
 Package: sparkwarc
 Type: Package
 Title: Load WARC files into Apache Spark with sparklyr
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("Javier", "Luraschi", email = "javier@rstudio.com", role = c("aut", "cre"))
     )
