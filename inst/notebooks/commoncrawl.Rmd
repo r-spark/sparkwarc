@@ -15,9 +15,7 @@ library(dplyr)
 
 ```{r}
 sc <- spark_connect(master = "local", version = "2.0.1")
-df <- spark_read_warc(sc, system.file("samples/sample.warc.gz", package = "sparkwarc"))
-sdf <- sdf_register(df, "warc")
-tbl_cache(sc, "warc")
+spark_read_warc(sc, system.file("samples/sample.warc.gz", package = "sparkwarc"), "warc")
 ```
 
 ```{sql connection=sc, max.print=10}
