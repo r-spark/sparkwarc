@@ -4,16 +4,19 @@
 \alias{spark_read_warc}
 \title{Reads a WARC File into Apache Spark}
 \usage{
-spark_read_warc(sc, path, partitions = 10, group = FALSE, ...)
+spark_read_warc(sc, path, repartition = 0L, group = FALSE, ...)
 }
 \arguments{
 \item{sc}{An active \code{spark_connection}.}
 
 \item{path}{The path to the warc file.}
 
-\item{partitions}{Number of partitions to use for loaded warc.}
+\item{repartition}{The number of partitions to use when distributing the
+table across the Spark cluster. The default (0) can be used to avoid
+partitioning.}
 
-\item{group}{\code{TRUE} to group by warc segment.}
+\item{group}{\code{TRUE} to group by warc segment. Currently supported
+only in HDFS and uncompressed files.}
 
 \item{...}{Additional arguments reserved for future use.}
 }

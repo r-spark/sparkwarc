@@ -1,12 +1,12 @@
 Package: sparkwarc
 Type: Package
-Title: Load WARC files into Apache Spark with sparklyr
+Title: Load WARC Files into Apache Spark
 Version: 0.1.0
 Authors@R: c(
     person("Javier", "Luraschi", email = "javier@rstudio.com", role = c("aut", "cre"))
     )
 Maintainer: Javier Luraschi <javier@rstudio.com>
-Description: Load WARC (Web ARChive) files into Apache Spark using sparklyr. This
+Description: Load WARC (Web ARChive) files into Apache Spark using 'sparklyr'. This
     allows to read files from the Common Crawl project <http://commoncrawl.org/>.
 License: Apache License 2.0
 BugReports: https://github.com/javierluraschi/sparkwarc
