@@ -6,12 +6,16 @@ import org.apache.spark.sql._
 
 object WARC {
   def load(sc: SparkContext, path: String) : DataFrame = {
-    val warc = sc.wholeTextFiles(path)
-    val warcpg = warc.flatMap(t => t._2.split("WARC/1.0"))
+    sc.hadoopConfiguration.set("textinputformat.record.delimiter", "WARC/1.0")
+
+    val warc = sc.textFile(path)
 
     val sqlContext = new SQLContext(sc)
     import sqlContext.implicits._
 
-    warcpg.toDF
+    val df = warc.toDF
+    sc.hadoopConfiguration.unset("textinputformat.record.delimiter")
+
+    df
   }
 }
