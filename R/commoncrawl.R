@@ -14,6 +14,6 @@
 #' @export
 cc_warc <- function(start, end = start) {
   warcPathsFile <- system.file("samples/sample.warc.paths", package = "sparkwarc")
-  warcPaths <- read.table(warc_paths)
+  warcPaths <- read.table(warcPathsFile)
   paste(warcPaths[seq(start, end), ], collapse = ",")
 }
