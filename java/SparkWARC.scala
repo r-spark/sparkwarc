@@ -5,8 +5,10 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.sql._
 
 object WARC {
-  def load(sc: SparkContext, path: String) : DataFrame = {
-    sc.hadoopConfiguration.set("textinputformat.record.delimiter", "WARC/1.0")
+  def load(sc: SparkContext, path: String, group: Boolean) : DataFrame = {
+    if (group) sc.hadoopConfiguration.set(
+      "textinputformat.record.delimiter", "WARC/1.0"
+    )
 
     val warc = sc.textFile(path)
 
