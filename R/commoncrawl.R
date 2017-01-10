@@ -12,6 +12,7 @@
 #' cc_warc(2, 3)
 #'
 #' @export
+#' @importFrom utils read.table
 cc_warc <- function(start, end = start) {
   warcPathsFile <- system.file("samples/sample.warc.paths", package = "sparkwarc")
   warcPaths <- read.table(warcPathsFile)

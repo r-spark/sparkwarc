@@ -1,5 +1,5 @@
 ---
-title: "Read WARC file from CommonCrawl.org in sparklyr"
+title: "Read WARC files from CommonCrawl.org in sparklyr"
 output:
   github_document:
     fig_width: 9
@@ -13,17 +13,9 @@ library(DBI)
 library(dplyr)
 ```
 
-```{r}
+```{r max.print=10}
 sc <- spark_connect(master = "local", version = "2.0.1")
-df <- spark_read_warc(sc, system.file("samples/sample.warc.gz", package = "sparkwarc"))
-sdf <- sdf_register(df, "warc")
-```
-
-```{sql connection=sc, max.print=10}
-SELECT substr(regexp_replace(value, '\n', '~'), 0, 60) as entry
-FROM WARC
-WHERE length(value) > 0
-LIMIT 10
+spark_read_warc(sc, "warc", system.file("samples/sample.warc.gz", package = "sparkwarc"))
 ```
 
 ```{sql connection=sc, max.print=1}

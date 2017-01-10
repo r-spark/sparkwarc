@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 derby.log$
 sparkwarc.Rcheck$
+log4j.spark.log$

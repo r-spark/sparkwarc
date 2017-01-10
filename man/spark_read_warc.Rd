@@ -4,16 +4,25 @@
 \alias{spark_read_warc}
 \title{Reads a WARC File into Apache Spark}
 \usage{
-spark_read_warc(sc, path, repartition = 0L, group = FALSE, ...)
+spark_read_warc(sc, name, path, repartition = 0L, memory = TRUE,
+  overwrite = TRUE, group = FALSE, ...)
 }
 \arguments{
 \item{sc}{An active \code{spark_connection}.}
 
-\item{path}{The path to the warc file.}
+\item{name}{The name to assign to the newly generated table.}
 
-\item{repartition}{The number of partitions to use when distributing the
-table across the Spark cluster. The default (0) can be used to avoid
-partitioning.}
+\item{path}{The path to the file. Needs to be accessible from the cluster.
+Supports the \samp{"hdfs://"}, \samp{"s3n://"} and \samp{"file://"} protocols.}
+
+\item{repartition}{The number of partitions used to distribute the
+generated table. Use 0 (the default) to avoid partitioning.}
+
+\item{memory}{Boolean; should the data be loaded eagerly into memory? (That
+is, should the table be cached?)}
+
+\item{overwrite}{Boolean; overwrite the table with the given name if it
+already exists?}
 
 \item{group}{\code{TRUE} to group by warc segment. Currently supported
 only in HDFS and uncompressed files.}
@@ -29,7 +38,10 @@ library(sparklyr)
 sc <- spark_connect(master = "spark://HOST:PORT")
 df <- spark_read_warc(
   sc,
-  system.file("samples/sample.warc", package = "sparkwarc")
+  system.file("samples/sample.warc", package = "sparkwarc"),
+  repartition = FALSE,
+  memory = FALSE,
+  overwrite = FALSE
 )
 
 spark_disconnect(sc)
