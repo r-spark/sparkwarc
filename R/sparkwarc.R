@@ -4,6 +4,7 @@
 #'
 #' @param sc An active \code{spark_connection}.
 #' @param path The path to the warc file.
+#' @param partitions Number of partitions to use for loaded warc.
 #' @param group \code{TRUE} to group by warc segment.
 #' @param ... Additional arguments reserved for future use.
 #'
@@ -19,12 +20,13 @@
 #' spark_disconnect(sc)
 #'
 #' @export
-spark_read_warc <- function(sc, path, group = FALSE, ...) {
+spark_read_warc <- function(sc, path, partitions = 10, group = FALSE, ...) {
   sparklyr::invoke_static(
     sc,
     "SparkWARC.WARC",
     "load",
     spark_context(sc),
     path,
+    partitions,
     group)
 }

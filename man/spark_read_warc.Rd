@@ -4,12 +4,16 @@
 \alias{spark_read_warc}
 \title{Reads a WARC File into Apache Spark}
 \usage{
-spark_read_warc(sc, path, ...)
+spark_read_warc(sc, path, partitions = 10, group = FALSE, ...)
 }
 \arguments{
 \item{sc}{An active \code{spark_connection}.}
 
 \item{path}{The path to the warc file.}
+
+\item{partitions}{Number of partitions to use for loaded warc.}
+
+\item{group}{\code{TRUE} to group by warc segment.}
 
 \item{...}{Additional arguments reserved for future use.}
 }
