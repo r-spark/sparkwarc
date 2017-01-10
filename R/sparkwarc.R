@@ -19,7 +19,7 @@
 #' spark_disconnect(sc)
 #'
 #' @export
-spark_read_warc <- function(sc, path, group = TRUE, ...) {
+spark_read_warc <- function(sc, path, group = FALSE, ...) {
   sparklyr::invoke_static(
     sc,
     "SparkWARC.WARC",
