@@ -27,8 +27,6 @@ object WARC {
     import sqlContext.implicits._
 
     val df = warcPaged.toDF
-    warcIdx.unpersist()
-
     df
   }
 }
