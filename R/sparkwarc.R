@@ -27,6 +27,6 @@ spark_read_warc <- function(sc, path, partitions = 10, group = FALSE, ...) {
     "load",
     spark_context(sc),
     path,
-    partitions,
+    as.integer(partitions),
     group)
 }
