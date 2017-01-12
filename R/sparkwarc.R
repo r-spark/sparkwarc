@@ -52,11 +52,8 @@ spark_read_warc <- function(sc,
     if (parse) "parse" else "load",
     spark_context(sc),
     path,
-    group)
-
-  if (repartition > 0) {
-    df <- invoke(df, "repartition", as.integer(repartition))
-  }
+    group,
+    as.integer(repartition))
 
   invoke(df, "registerTempTable", name)
 

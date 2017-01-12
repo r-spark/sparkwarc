@@ -7,7 +7,7 @@ import scala.util.matching._
 import org.apache.spark.sql.types._
 
 object WARC {
-  def load(sc: SparkContext, path: String, group: Boolean) : DataFrame = {
+  def load(sc: SparkContext, path: String, group: Boolean, repartitions: Int) : DataFrame = {
     if (group) sc.hadoopConfiguration.set(
       "textinputformat.record.delimiter", "WARC/1.0"
     )
@@ -20,14 +20,15 @@ object WARC {
     val df = warc.toDF
     sc.hadoopConfiguration.unset("textinputformat.record.delimiter")
 
-    df
+    if (repartitions > 0) df.repartition(repartitions) else df
   }
 
-  def parse(sc: SparkContext, path: String, group: Boolean) : DataFrame = {
+  def parse(sc: SparkContext, path: String, group: Boolean, repartitions: Int) : DataFrame = {
     val sqlContext = new SQLContext(sc)
     val warc = sc.textFile(path)
+    val warcRepart = if (repartitions > 0) warc.repartition(repartitions) else warc
 
-    val warcParsed = warc.flatMap(line => {
+    val warcParsed = warcRepart.flatMap(line => {
       val tagsRegex = new Regex("<([a-zA-Z]+) ?([^>]*)>")
 
       tagsRegex.findAllIn(line).matchData.toList.flatMap(t => {
