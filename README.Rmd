@@ -27,7 +27,11 @@ library(dplyr)
 
 ```{r max.print=10}
 sc <- spark_connect(master = "local", version = "2.0.1")
-spark_read_warc(sc, "warc", system.file("samples/sample.warc.gz", package = "sparkwarc"))
+spark_read_warc(
+  sc,
+  "warc",
+  system.file("samples/sample.warc.gz", package = "sparkwarc"),
+  repartition = 8)
 ```
 
 ```{sql connection=sc, max.print=1}
@@ -37,24 +41,97 @@ WHERE length(regexp_extract(value, '<html', 0)) > 0
 ```
 
 ```{r}
-spark_regexp_stats <- function(tbl, regval) {
-  tbl %>%
-    transmute(language = regexp_extract(value, regval, 1)) %>%
-    group_by(language) %>%
-    summarize(n = n())
+cc_stats <- function(ops, value) {
+  ops %>%
+    filter(value != "") %>%
+    group_by(value) %>%
+    summarize(count = n()) %>%
+    arrange(desc(count)) %>%
+    head(100)
+}
+
+cc_regex <- function(regex) {
+  tbl(sc, "warc") %>%
+    transmute(regval = regexp_extract(value, regval, 1)) %>%
+    cc_stats(regex)
 }
 ```
 
 ```{r}
-regexpLang <- "http-equiv=\"Content-Language\" content=\"(.*)\""
-tbl(sc, "warc") %>% spark_regexp_stats(regexpLang)
+cc_stats("http-equiv=\"Content-Language\" content=\"(.*)\"")
+```
+
+```{r}
+cc_stats("<script .*src=\\\".*/(.+)\\\".*")
+```
+
+```{r}
+cc_stats("<([a-zA-Z]+)>")
+```
+
+```{r}
+cc_stats(" ([a-zA-Z]{5,10}) ")
+```
+
+```{r}
+cc_stats("<meta .*keywords.*content=\"([^,\\\"]+).*")
+```
+
+```{r}
+cc_stats("<script .*src=\\\".*/([^/]+.js)\\\".*")
 ```
 
 ```{r}
 spark_disconnect(sc)
 ```
 
-# Scale
+# Querying 1GB
+
+```{r}
+config <- spark_config()
+config[["spark.memory.fraction"]] <- "0.9"
+config[["spark.executor.memory"]] <- "10G"
+config[["sparklyr.shell.driver-memory"]] <- "10G"
+
+sc <- spark_connect(master = "local", version = "2.0.1", config = config)
+spark_read_warc(
+  sc,
+  "warc",
+  "/Users/javierluraschi/Downloads/CC-MAIN-20161202170900-00000-ip-10-31-129-80.ec2.internal.warc",
+  repartition = 8)
+```
+
+df <- data.frame(list(a = list("a,b,c")))
+
+```{sql connection=sc, max.print=1}
+SELECT count(value)
+FROM WARC
+WHERE length(regexp_extract(value, '<([a-z]+)>', 0)) > 0
+```
+
+```{sql connection=sc, max.print=1}
+SELECT count(value)
+FROM WARC
+WHERE length(regexp_extract(value, '<html', 0)) > 0
+```
+
+```{r}
+cc_stats("http-equiv=\"Content-Language\" content=\"([^\\\"]*)\"")
+```
+
+```{r}
+cc_stats("WARC-Target-URI: http://([^/]+)/.*")
+```
+
+```{r}
+cc_stats("<([a-zA-Z]+)>")
+```
+
+```{r}
+cc_stats("<meta .*keywords.*content=\"([a-zA-Z0-9]+).*")
+```
+
+# Querying 1PB
 
 By [running sparklyr in EMR](https://aws.amazon.com/blogs/big-data/running-sparklyr-rstudios-r-interface-to-spark-on-amazon-emr/), one can configure an EMR cluster and load about **~5GB** of data using:
 

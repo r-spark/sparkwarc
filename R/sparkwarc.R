@@ -14,6 +14,7 @@
 #'   already exists?
 #' @param group \code{TRUE} to group by warc segment. Currently supported
 #'   only in HDFS and uncompressed files.
+#' @param parse \code{TRUE} to parse warc into tags, attribute, value, etc.
 #' @param ... Additional arguments reserved for future use.
 #'
 #' @examples
@@ -39,6 +40,7 @@ spark_read_warc <- function(sc,
                             memory = TRUE,
                             overwrite = TRUE,
                             group = FALSE,
+                            parse = FALSE,
                             ...) {
   if (overwrite && name %in% dbListTables(sc)) {
     dbRemoveTable(sc, name)
@@ -47,7 +49,7 @@ spark_read_warc <- function(sc,
   df <- sparklyr::invoke_static(
     sc,
     "SparkWARC.WARC",
-    "load",
+    if (parse) "parse" else "load",
     spark_context(sc),
     path,
     group)

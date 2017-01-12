@@ -5,7 +5,7 @@
 \title{Reads a WARC File into Apache Spark}
 \usage{
 spark_read_warc(sc, name, path, repartition = 0L, memory = TRUE,
-  overwrite = TRUE, group = FALSE, ...)
+  overwrite = TRUE, group = FALSE, parse = FALSE, ...)
 }
 \arguments{
 \item{sc}{An active \code{spark_connection}.}
@@ -26,6 +26,8 @@ already exists?}
 
 \item{group}{\code{TRUE} to group by warc segment. Currently supported
 only in HDFS and uncompressed files.}
+
+\item{parse}{\code{TRUE} to parse warc into tags, attribute, value, etc.}
 
 \item{...}{Additional arguments reserved for future use.}
 }
