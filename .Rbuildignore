@@ -2,7 +2,7 @@
 ^\.Rproj\.user$
 derby.log$
 sparkwarc.Rcheck$
-log4j.spark.log$
+log4j.spark.log.*$
 ^README\.Rmd$
 ^README_files$
 ^README_images$

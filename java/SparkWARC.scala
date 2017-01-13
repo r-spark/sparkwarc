@@ -41,7 +41,7 @@ object WARC {
           })
         )
       }).union({
-        val warcRegex = new Regex("(WARC-[a-zA-Z]): (.*)")
+        val warcRegex = new Regex("(WARC-[a-zA-Z-]+): ?(.*)")
 
         warcRegex.findAllIn(line).matchData.toList.map(t => {
           Row.fromSeq(Seq(t.group(1), "", t.group(2), line))
