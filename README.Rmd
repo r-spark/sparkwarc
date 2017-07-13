@@ -18,14 +18,14 @@ devtools::install_github("javierluraschi/sparkwarc")
 
 The following example loads a very small subset of a WARC file from [Common Crawl](http://commoncrawl.org), a nonprofit 501 organization that crawls the web and freely provides its archives and datasets to the public.
 
-```{r}
+```{r message=FALSE}
 library(sparkwarc)
 library(sparklyr)
 library(DBI)
 library(dplyr)
 ```
 
-```{r max.print=10}
+```{r connect-1, max.print=10}
 sc <- spark_connect(master = "local")
 spark_read_warc(
   sc,
@@ -34,13 +34,13 @@ spark_read_warc(
   repartition = 8)
 ```
 
-```{sql connection=sc, max.print=1}
+```{sql query-1, connection=sc, max.print=1}
 SELECT count(value)
 FROM WARC
 WHERE length(regexp_extract(value, '<html', 0)) > 0
 ```
 
-```{r}
+```{r functions-1}
 cc_regex <- function(ops) {
   ops %>%
     filter(regval != "") %>%
@@ -57,38 +57,38 @@ cc_stats <- function(regex) {
 }
 ```
 
-```{r}
+```{r query-2}
 cc_stats("http-equiv=\"Content-Language\" content=\"(.*)\"")
 ```
 
-```{r}
+```{r query-3}
 cc_stats("<script .*src=\".*/(.+)\".*")
 ```
 
-```{r}
+```{r query-4}
 cc_stats("<([a-zA-Z]+)>")
 ```
 
-```{r}
+```{r query-5}
 cc_stats(" ([a-zA-Z]{5,10}) ")
 ```
 
-```{r}
+```{r query-6}
 cc_stats("<meta .*keywords.*content=\"([^,\"]+).*")
 ```
 
-```{r}
+```{r query-7}
 cc_stats("<script .*src=\".*/([^/]+.js)\".*")
 ```
 
-```{r}
+```{r disconnect-1}
 spark_disconnect(sc)
 ```
 
 # Querying 1GB
 
-```{r}
-warc_big <- "~/cc.warc.gz"                          # Name a 5GB warc file
+```{r download-1}
+warc_big <- normalizePath("~/cc.warc.gz")           # Name a 5GB warc file
 if (!file.exists(warc_big))                         # If the file does not exist
   download.file(                                    # download by
     gsub("s3n://commoncrawl/",                      # mapping the S3 bucket url
@@ -96,13 +96,16 @@ if (!file.exists(warc_big))                         # If the file does not exist
          sparkwarc::cc_warc(1)), warc_big)          # from the first archive file
 ```
 
-```{r}
+```{r connect-2}
 config <- spark_config()
 config[["spark.memory.fraction"]] <- "0.9"
 config[["spark.executor.memory"]] <- "10G"
 config[["sparklyr.shell.driver-memory"]] <- "10G"
 
 sc <- spark_connect(master = "local", config = config)
+```
+
+```{r load-1}
 spark_read_warc(
   sc,
   "warc",
@@ -112,35 +115,35 @@ spark_read_warc(
 
 df <- data.frame(list(a = list("a,b,c")))
 
-```{sql connection=sc, max.print=1}
+```{sql query-8, connection=sc, max.print=1}
 SELECT count(value)
 FROM WARC
 WHERE length(regexp_extract(value, '<([a-z]+)>', 0)) > 0
 ```
 
-```{sql connection=sc, max.print=1}
+```{sql query-9, connection=sc, max.print=1}
 SELECT count(value)
 FROM WARC
 WHERE length(regexp_extract(value, '<html', 0)) > 0
 ```
 
-```{r}
+```{r query-10}
 cc_stats("http-equiv=\"Content-Language\" content=\"([^\"]*)\"")
 ```
 
-```{r}
+```{r query-11}
 cc_stats("WARC-Target-URI: http://([^/]+)/.*")
 ```
 
-```{r}
+```{r query-12}
 cc_stats("<([a-zA-Z]+)>")
 ```
 
-```{r}
+```{r query-13}
 cc_stats("<meta .*keywords.*content=\"([a-zA-Z0-9]+).*")
 ```
 
-```{r}
+```{r disconnect-2}
 spark_disconnect(sc)
 ```
 
