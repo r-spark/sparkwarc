@@ -1,3 +1,4 @@
+// [[Rcpp::plugins("cpp11")]]
 
 #include <Rcpp.h>
 using namespace Rcpp;
@@ -27,18 +28,32 @@ CharacterVector rcpp_read_warc(std::string path,
 
   const int buffer_size = 4 * 1024;
   char buffer[buffer_size] = {'\0'};
-  char* line = NULL;
 
+  std::list<std::string> warc_entries;
+
+  const int warc_mean_size = 40 * 1024;
   std::string warc_entry;
-  warc_entry.reserve(buffer_size);
+  warc_entry.reserve(warc_mean_size);
 
-  while((line = gzgets(gzf, buffer, buffer_size)) != Z_NULL) {
+  const std::string warc_separator = "WARC/1.0";
+  while(gzgets(gzf, buffer, buffer_size) != Z_NULL) {
+    if (std::string(buffer).substr(0, warc_separator.size()) == warc_separator && warc_entry.size() > 0) {
+      warc_entries.push_back(warc_entry);
+      warc_entry.clear();
+    }
+
     warc_entry.append(buffer);
   }
 
   if (gzf) gzclose(gzf);
   if (fp) fclose(fp);
 
-  CharacterVector result = CharacterVector::create(warc_entry.c_str());
-  return result;
+  CharacterVector results(warc_entries.size());
+
+  long idxEntry = 0;
+  std::for_each(warc_entries.begin(), warc_entries.end(), [&results, &idxEntry](std::string &entry) {
+    results[idxEntry++] = entry;
+  });
+
+  return results;
 }
