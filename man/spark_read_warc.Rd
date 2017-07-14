@@ -5,7 +5,7 @@
 \title{Reads a WARC File into Apache Spark}
 \usage{
 spark_read_warc(sc, name, path, repartition = 0L, memory = TRUE,
-  overwrite = TRUE, group = FALSE, parse = FALSE, ...)
+  overwrite = TRUE, group = FALSE, parse = FALSE, filter = NULL, ...)
 }
 \arguments{
 \item{sc}{An active \code{spark_connection}.}
@@ -29,6 +29,9 @@ only in HDFS and uncompressed files.}
 
 \item{parse}{\code{TRUE} to parse warc into tags, attribute, value, etc.}
 
+\item{filter}{A regular expression that is applied to each warc entry
+efficiently by running native code using \code{Rcpp}.}
+
 \item{...}{Additional arguments reserved for future use.}
 }
 \description{
@@ -49,4 +52,3 @@ df <- spark_read_warc(
 spark_disconnect(sc)
 
 }
-
