@@ -15,6 +15,8 @@
 #' @param group \code{TRUE} to group by warc segment. Currently supported
 #'   only in HDFS and uncompressed files.
 #' @param parse \code{TRUE} to parse warc into tags, attribute, value, etc.
+#' @param filter A regular expression that is applied to each warc entry
+#'   efficiently by running native code using \code{Rcpp}.
 #' @param ... Additional arguments reserved for future use.
 #'
 #' @examples
@@ -32,6 +34,7 @@
 #' spark_disconnect(sc)
 #'
 #' @export
+#' @useDynLib sparkwarc, .registration = TRUE
 #' @import DBI
 spark_read_warc <- function(sc,
                             name,
@@ -41,7 +44,10 @@ spark_read_warc <- function(sc,
                             overwrite = TRUE,
                             group = FALSE,
                             parse = FALSE,
+                            filter = NULL,
                             ...) {
+  if (!is.null(filter)) stop("filter is noy implemented")
+
   if (overwrite && name %in% dbListTables(sc)) {
     dbRemoveTable(sc, name)
   }
