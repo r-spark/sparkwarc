@@ -44,7 +44,7 @@ spark_read_warc <- function(sc,
                             overwrite = TRUE,
                             group = FALSE,
                             parse = FALSE,
-                            filter = NULL,
+                            filter = "",
                             ...) {
   if (!is.null(filter)) stop("filter is noy implemented")
 

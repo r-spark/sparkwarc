@@ -5,7 +5,7 @@
 \title{Reads a WARC File into Apache Spark}
 \usage{
 spark_read_warc(sc, name, path, repartition = 0L, memory = TRUE,
-  overwrite = TRUE, group = FALSE, parse = FALSE, filter = NULL, ...)
+  overwrite = TRUE, group = FALSE, parse = FALSE, filter = "", ...)
 }
 \arguments{
 \item{sc}{An active \code{spark_connection}.}

@@ -4,7 +4,11 @@
 \alias{spark_read_warc_sample}
 \title{Loads the sample warc file}
 \usage{
-spark_read_warc_sample()
+spark_read_warc_sample(filter = "")
+}
+\arguments{
+\item{filter}{A regular expression that is applied to each warc entry
+efficiently by running native code using \code{Rcpp}.}
 }
 \description{
 Loads the sample warc file
