@@ -19,16 +19,26 @@ List rcpp_hello_world() {
 CharacterVector rcpp_read_warc(std::string path,
                                std::string filter) {
 
-  CharacterVector result = CharacterVector::create("");
-
   FILE *fp = fopen(path.c_str(), "rb");
   if (!fp) Rcpp::stop("Failed to open WARC file.");
 
   gzFile gzf = gzdopen(fileno(fp), "rb");
   if (!gzf) Rcpp::stop("Failed to open WARC as a compressed file.");
 
-  if (gzf) gzclose(fp);
+  const int buffer_size = 4 * 1024;
+  char buffer[buffer_size] = {'\0'};
+  char* line = NULL;
+
+  std::string warc_entry;
+  warc_entry.reserve(buffer_size);
+
+  while((line = gzgets(gzf, buffer, buffer_size)) != Z_NULL) {
+    warc_entry.append(buffer);
+  }
+
+  if (gzf) gzclose(gzf);
   if (fp) fclose(fp);
 
+  CharacterVector result = CharacterVector::create(warc_entry.c_str());
   return result;
 }
