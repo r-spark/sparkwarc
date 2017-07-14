@@ -46,27 +46,49 @@ spark_read_warc <- function(sc,
                             parse = FALSE,
                             filter = "",
                             ...) {
-  if (!is.null(filter)) stop("filter is noy implemented")
-
   if (overwrite && name %in% dbListTables(sc)) {
     dbRemoveTable(sc, name)
   }
 
-  df <- sparklyr::invoke_static(
-    sc,
-    "SparkWARC.WARC",
-    if (parse) "parse" else "load",
-    spark_context(sc),
-    path,
-    group,
-    as.integer(repartition))
+  if (!parse) {
+    paths_df <- data.frame(paths = strsplit(path, ",")[[1]])
+    paths_tbl <- sdf_copy_to(sc, paths_df, name = "sparkwarc_paths", overwrite = TRUE)
 
-  invoke(df, "registerTempTable", name)
+    if (repartition > 0)
+      paths_tbl <- sdf_repartition(paths_tbl, repartition)
+
+    df <- spark_apply(paths_tbl, function(df) {
+      entries <- apply(df, 1, function(path) {
+        if (grepl("s3n://", path)) {
+          path <- sub("s3n://", "commoncrawl.s3.amazonaws.com", path)
+          temp_warc <- tempfile(fileext = ".warc.gz")
+          download.file(url = path, destfile = temp_warc)
+          path <- temp_warc
+        }
+
+        rcpp_read_warc(path, filter = "")
+      })
+
+      if (nrow(df) > 1) do.call("rbind", entries) else data.frame(entries)
+    }) %>% spark_dataframe()
+  }
+  else {
+    df <- sparklyr::invoke_static(
+      sc,
+      "SparkWARC.WARC",
+      if (parse) "parse" else "load",
+      spark_context(sc),
+      path,
+      group,
+      as.integer(repartition))
+  }
+
+  result_tbl <- sdf_register(df, name)
 
   if (memory) {
     dbGetQuery(sc, paste("CACHE TABLE", DBI::dbQuoteIdentifier(sc, name)))
     dbGetQuery(sc, paste("SELECT count(*) FROM", DBI::dbQuoteIdentifier(sc, name)))
   }
 
-  invisible(NULL)
+  result_tbl
 }
