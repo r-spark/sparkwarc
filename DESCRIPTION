@@ -15,6 +15,7 @@ LazyData: true
 Imports:
     DBI,
     sparklyr,
-    Rcpp (>= 0.12.11)
+    Rcpp
 RoxygenNote: 6.0.0
-LinkingTo: Rcpp
+LinkingTo:
+    Rcpp
