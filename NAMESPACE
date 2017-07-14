@@ -2,6 +2,7 @@
 
 export(cc_warc)
 export(spark_read_warc)
+export(spark_read_warc_sample)
 import(DBI)
 import(sparklyr)
 importFrom(utils,read.table)

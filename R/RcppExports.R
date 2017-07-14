@@ -5,3 +5,7 @@ rcpp_hello_world <- function() {
     .Call(sparkwarc_rcpp_hello_world)
 }
 
+rcpp_read_warc <- function(path, filter) {
+    .Call(sparkwarc_rcpp_read_warc, path, filter)
+}
+
