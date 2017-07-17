@@ -49,10 +49,9 @@ DataFrame rcpp_read_warc(std::string path,
 
     while(gzgets(gzf, buffer, buffer_size) != Z_NULL) {
       std::string line(buffer);
-      std::string no_newline = line.substr(0, line.find_first_of('\n'));
 
       if (!filter.empty() && !one_matched) {
-        one_matched = regex_match(no_newline, filter_regex);
+        one_matched = regex_search(line, filter_regex);
       }
 
       if (std::string(line).substr(0, warc_separator.size()) == warc_separator && warc_entry.size() > 0) {
@@ -67,12 +66,12 @@ DataFrame rcpp_read_warc(std::string path,
         warc_entry.clear();
       }
 
-      if (include.empty() || regex_match(no_newline, include_regex)) {
+      if (include.empty() || regex_search(line, include_regex)) {
         warc_entry.append(line);
       }
 
       std::smatch stats_tags_match;
-      if (regex_search(no_newline, stats_tags_match, stats_tags_regex)) {
+      if (regex_search(line, stats_tags_match, stats_tags_regex)) {
         stats_tags_total += stats_tags_match.size();
       }
     }
