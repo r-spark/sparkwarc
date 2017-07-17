@@ -1,7 +1,7 @@
 Package: sparkwarc
 Type: Package
 Title: Load WARC Files into Apache Spark
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: c(
     person("Javier", "Luraschi", email = "javier@rstudio.com", role = c("aut", "cre"))
     )
