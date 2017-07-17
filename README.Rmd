@@ -30,7 +30,7 @@ sc <- spark_connect(master = "local")
 ```
 
 ```{r load-sample}
-spark_read_warc_sample(sc)
+spark_read_warc(sc, path = spark_warc_sample_path(), name = "WARC")
 ```
 
 ```{sql query-1, connection=sc, max.print=1}

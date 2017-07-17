@@ -19,8 +19,10 @@ List rcpp_hello_world() {
 
 // [[Rcpp::export]]
 CharacterVector rcpp_read_warc(std::string path,
-                               std::string filter) {
+                               std::string filter,
+                               std::string include) {
   std::regex filter_regex(filter);
+  std::regex include_regex(include);
 
   FILE *fp = fopen(path.c_str(), "rb");
   if (!fp) Rcpp::stop("Failed to open WARC file.");
@@ -41,14 +43,14 @@ CharacterVector rcpp_read_warc(std::string path,
   const std::string warc_separator = "WARC/1.0";
   while(gzgets(gzf, buffer, buffer_size) != Z_NULL) {
     std::string line(buffer);
+    std::string no_newline = line.substr(0, line.find_first_of('\n'));
 
-    if (filter.size() > 0 && !one_matched) {
-      std::string no_newline = line.substr(0, line.find_first_of('\n'));
+    if (!filter.empty() && !one_matched) {
       one_matched = regex_match(no_newline, filter_regex);
     }
 
     if (std::string(line).substr(0, warc_separator.size()) == warc_separator && warc_entry.size() > 0) {
-      if (filter.size() == 0 || one_matched) {
+      if (filter.empty() || one_matched) {
         warc_entries.push_back(warc_entry);
       }
 
@@ -56,7 +58,9 @@ CharacterVector rcpp_read_warc(std::string path,
       warc_entry.clear();
     }
 
-    warc_entry.append(line);
+    if (include.empty() || regex_match(no_newline, include_regex)) {
+      warc_entry.append(line);
+    }
   }
 
   if (gzf) gzclose(gzf);

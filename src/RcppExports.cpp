@@ -16,21 +16,22 @@ BEGIN_RCPP
 END_RCPP
 }
 // rcpp_read_warc
-CharacterVector rcpp_read_warc(std::string path, std::string filter);
-RcppExport SEXP sparkwarc_rcpp_read_warc(SEXP pathSEXP, SEXP filterSEXP) {
+CharacterVector rcpp_read_warc(std::string path, std::string filter, std::string include);
+RcppExport SEXP sparkwarc_rcpp_read_warc(SEXP pathSEXP, SEXP filterSEXP, SEXP includeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::string >::type path(pathSEXP);
     Rcpp::traits::input_parameter< std::string >::type filter(filterSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_read_warc(path, filter));
+    Rcpp::traits::input_parameter< std::string >::type include(includeSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_read_warc(path, filter, include));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
     {"sparkwarc_rcpp_hello_world", (DL_FUNC) &sparkwarc_rcpp_hello_world, 0},
-    {"sparkwarc_rcpp_read_warc", (DL_FUNC) &sparkwarc_rcpp_read_warc, 2},
+    {"sparkwarc_rcpp_read_warc", (DL_FUNC) &sparkwarc_rcpp_read_warc, 3},
     {NULL, NULL, 0}
 };
 
