@@ -5,7 +5,8 @@ using namespace Rcpp;
 
 #include <stdio.h>
 #include <zlib.h>
-#include <regex>
+
+#include <boost/regex.hpp>
 
 // [[Rcpp::export]]
 List rcpp_hello_world() {
@@ -21,79 +22,76 @@ List rcpp_hello_world() {
 DataFrame rcpp_read_warc(std::string path,
                          std::string filter,
                          std::string include) {
-  try {
-    std::regex filter_regex(filter);
-    std::regex include_regex(include);
+  boost::regex filter_regex(filter);
+  boost::regex include_regex(include);
 
-    FILE *fp = fopen(path.c_str(), "rb");
-    if (!fp) Rcpp::stop("Failed to open WARC file.");
+  FILE *fp = fopen(path.c_str(), "rb");
+  if (!fp) Rcpp::stop("Failed to open WARC file.");
 
-    gzFile gzf = gzdopen(fileno(fp), "rb");
-    if (!gzf) Rcpp::stop("Failed to open WARC as a compressed file.");
+  gzFile gzf = gzdopen(fileno(fp), "rb");
+  if (!gzf) Rcpp::stop("Failed to open WARC as a compressed file.");
 
-    const int buffer_size = 4 * 1024;
-    char buffer[buffer_size] = {'\0'};
+  const int buffer_size = 4 * 1024;
+  char buffer[buffer_size] = {'\0'};
 
-    std::list<std::string> warc_entries;
+  std::list<std::string> warc_entries;
 
-    const int warc_mean_size = 40 * 1024;
-    std::string warc_entry;
-    warc_entry.reserve(warc_mean_size);
+  const int warc_mean_size = 40 * 1024;
+  std::string warc_entry;
+  warc_entry.reserve(warc_mean_size);
 
-    bool one_matched = false;
-    const std::string warc_separator = "WARC/1.0";
+  bool one_matched = false;
+  const std::string warc_separator = "WARC/1.0";
 
-    long stats_tags_total = 0;
-    const std::regex stats_tags_regex("<.+>");
-    std::list<long> warc_stats;
+  long stats_tags_total = 0;
+  const boost::regex stats_tags_regex("<[a-zA-Z]+.*>");
+  std::list<long> warc_stats;
 
-    while(gzgets(gzf, buffer, buffer_size) != Z_NULL) {
-      std::string line(buffer);
+  while(gzgets(gzf, buffer, buffer_size) != Z_NULL) {
+    std::string line(buffer);
+    std::string no_newline = line.substr(0, line.find_first_of('\n'));
 
-      if (!filter.empty() && !one_matched) {
-        one_matched = regex_search(line, filter_regex);
-      }
-
-      if (std::string(line).substr(0, warc_separator.size()) == warc_separator && warc_entry.size() > 0) {
-        if (filter.empty() || one_matched) {
-          warc_entries.push_back(warc_entry);
-          warc_stats.push_back(stats_tags_total);
-          stats_tags_total = 0;
-        }
-
-        one_matched = false;
-
-        warc_entry.clear();
-      }
-
-      if (include.empty() || regex_search(line, include_regex)) {
-        warc_entry.append(line);
-      }
-
-      std::smatch stats_tags_match;
-      if (regex_search(line, stats_tags_match, stats_tags_regex)) {
-        stats_tags_total += stats_tags_match.size();
-      }
+    if (!filter.empty() && !one_matched) {
+      one_matched = boost::regex_match(no_newline, filter_regex);
     }
 
-    if (gzf) gzclose(gzf);
-    if (fp) fclose(fp);
+    if (std::string(line).substr(0, warc_separator.size()) == warc_separator && warc_entry.size() > 0) {
+      if (filter.empty() || one_matched) {
+        warc_entries.push_back(warc_entry);
+        warc_stats.push_back(stats_tags_total);
+        stats_tags_total = 0;
+      }
 
-    long idxEntry = 0;
-    CharacterVector results(warc_entries.size());
-    std::for_each(warc_entries.begin(), warc_entries.end(), [&results, &idxEntry](std::string &entry) {
-      results[idxEntry++] = entry;
-    });
+      one_matched = false;
 
-    long idxStat = 0;
-    NumericVector stats(warc_stats.size());
-    std::for_each(warc_stats.begin(), warc_stats.end(), [&stats, &idxStat](long &stat) {
-      stats[idxStat++] = stat;
-    });
+      warc_entry.clear();
+    }
 
-    return DataFrame::create(Named("tags") = stats, _["content"] = results);
+    if (include.empty() || boost::regex_match(no_newline, include_regex)) {
+      warc_entry.append(line);
+    }
+
+    boost::sregex_token_iterator iter(no_newline.begin(), no_newline.end(), stats_tags_regex, 0);
+    boost::sregex_token_iterator end;
+    for( ; iter != end; ++iter ) {
+      stats_tags_total += 1;
+    }
   }
-  catch (const std::regex_error& e) {
-    Rcpp::stop(e.what());
-  }
+
+  if (gzf) gzclose(gzf);
+  if (fp) fclose(fp);
+
+  long idxEntry = 0;
+  CharacterVector results(warc_entries.size());
+  std::for_each(warc_entries.begin(), warc_entries.end(), [&results, &idxEntry](std::string &entry) {
+    results[idxEntry++] = entry;
+  });
+
+  long idxStat = 0;
+  NumericVector stats(warc_stats.size());
+  std::for_each(warc_stats.begin(), warc_stats.end(), [&stats, &idxStat](long &stat) {
+    stats[idxStat++] = stat;
+  });
+
+  return DataFrame::create(Named("tags") = stats, _["content"] = results);
 }
