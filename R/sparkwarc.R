@@ -61,6 +61,16 @@ spark_read_warc <- function(sc,
       paths_tbl <- sdf_repartition(paths_tbl, repartition)
 
     df <- spark_apply(paths_tbl, function(df) {
+      if (!"devtools" %in% rownames(installed.packages())) {
+        install.packages("devtools")
+      }
+
+      if (!"sparkwarc" %in% rownames(installed.packages())) {
+        devtools::install_github("javierluraschi/sparkwarc", ref = "feature/spark-apply-rcpp")
+      }
+
+      library(sparkwarc)
+
       entries <- apply(df, 1, function(path) {
         if (grepl("s3n://", path)) {
           path <- sub("s3n://", "commoncrawl.s3.amazonaws.com", path)
@@ -73,7 +83,7 @@ spark_read_warc <- function(sc,
       })
 
       if (nrow(df) > 1) do.call("rbind", entries) else data.frame(entries)
-    }) %>% spark_dataframe()
+    }, names = c("tags", "content")) %>% spark_dataframe()
   }
   else {
     df <- sparklyr::invoke_static(

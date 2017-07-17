@@ -29,7 +29,7 @@ rcpp_read_warc_sample <- function(filter = "", include = "") {
 #'
 #' @export
 spark_read_warc_sample <- function(sc, filter = "", include = "") {
-  sample_warc <- rcpp_read_warc_sample_path()
+  sample_warc <- spark_warc_sample_path()
 
   spark_read_warc(
     sc,
