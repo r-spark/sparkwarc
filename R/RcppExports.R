@@ -2,10 +2,10 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 rcpp_hello_world <- function() {
-    .Call(sparkwarc_rcpp_hello_world)
+    .Call(`_sparkwarc_rcpp_hello_world`)
 }
 
 rcpp_read_warc <- function(path, filter, include) {
-    .Call(sparkwarc_rcpp_read_warc, path, filter, include)
+    .Call(`_sparkwarc_rcpp_read_warc`, path, filter, include)
 }
 

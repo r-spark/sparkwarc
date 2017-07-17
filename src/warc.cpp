@@ -6,8 +6,6 @@ using namespace Rcpp;
 #include <stdio.h>
 #include <zlib.h>
 
-#include <boost/regex.hpp>
-
 // [[Rcpp::export]]
 List rcpp_hello_world() {
 
@@ -22,8 +20,6 @@ List rcpp_hello_world() {
 DataFrame rcpp_read_warc(std::string path,
                          std::string filter,
                          std::string include) {
-  boost::regex filter_regex(filter);
-  boost::regex include_regex(include);
 
   FILE *fp = fopen(path.c_str(), "rb");
   if (!fp) Rcpp::stop("Failed to open WARC file.");
@@ -44,7 +40,6 @@ DataFrame rcpp_read_warc(std::string path,
   const std::string warc_separator = "WARC/1.0";
 
   long stats_tags_total = 0;
-  const boost::regex stats_tags_regex("<[a-zA-Z]+.*>");
   std::list<long> warc_stats;
 
   while(gzgets(gzf, buffer, buffer_size) != Z_NULL) {
@@ -52,7 +47,7 @@ DataFrame rcpp_read_warc(std::string path,
     std::string no_newline = line.substr(0, line.find_first_of('\n'));
 
     if (!filter.empty() && !one_matched) {
-      one_matched = boost::regex_match(no_newline, filter_regex);
+      one_matched = no_newline.find(filter) != std::string::npos;
     }
 
     if (std::string(line).substr(0, warc_separator.size()) == warc_separator && warc_entry.size() > 0) {
@@ -67,13 +62,12 @@ DataFrame rcpp_read_warc(std::string path,
       warc_entry.clear();
     }
 
-    if (include.empty() || boost::regex_match(no_newline, include_regex)) {
+    if (include.empty() || no_newline.find(include) != std::string::npos) {
       warc_entry.append(line);
     }
 
-    boost::sregex_token_iterator iter(no_newline.begin(), no_newline.end(), stats_tags_regex, 0);
-    boost::sregex_token_iterator end;
-    for( ; iter != end; ++iter ) {
+    std::size_t tag_start = no_newline.find("<");
+    if (tag_start != std::string::npos && no_newline.find(">", tag_start + 1)) {
       stats_tags_total += 1;
     }
   }

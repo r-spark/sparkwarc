@@ -19,5 +19,4 @@ Imports:
 RoxygenNote: 6.0.0
 LinkingTo:
     Rcpp,
-    BH
 SystemRequirements: C++11
