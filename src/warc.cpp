@@ -44,7 +44,7 @@ DataFrame rcpp_read_warc(std::string path,
     const std::string warc_separator = "WARC/1.0";
 
     long stats_tags_total = 0;
-    const std::regex_constants::regex stats_tags_regex("<.+>");
+    const std::regex stats_tags_regex("<.+>");
     std::list<long> warc_stats;
 
     while(gzgets(gzf, buffer, buffer_size) != Z_NULL) {
