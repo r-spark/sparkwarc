@@ -18,9 +18,9 @@ List rcpp_hello_world() {
 }
 
 // [[Rcpp::export]]
-CharacterVector rcpp_read_warc(std::string path,
-                               std::string filter,
-                               std::string include) {
+DataFrame rcpp_read_warc(std::string path,
+                         std::string filter,
+                         std::string include) {
   std::regex filter_regex(filter);
   std::regex include_regex(include);
 
@@ -41,6 +41,11 @@ CharacterVector rcpp_read_warc(std::string path,
 
   bool one_matched = false;
   const std::string warc_separator = "WARC/1.0";
+
+  long stats_tags_total = 0;
+  const std::regex stats_tags_regex(".*<[a-zA-Z].*>");
+  std::list<long> warc_stats;
+
   while(gzgets(gzf, buffer, buffer_size) != Z_NULL) {
     std::string line(buffer);
     std::string no_newline = line.substr(0, line.find_first_of('\n'));
@@ -52,26 +57,39 @@ CharacterVector rcpp_read_warc(std::string path,
     if (std::string(line).substr(0, warc_separator.size()) == warc_separator && warc_entry.size() > 0) {
       if (filter.empty() || one_matched) {
         warc_entries.push_back(warc_entry);
+        warc_stats.push_back(stats_tags_total);
+        stats_tags_total = 0;
       }
 
       one_matched = false;
+
       warc_entry.clear();
     }
 
     if (include.empty() || regex_match(no_newline, include_regex)) {
       warc_entry.append(line);
     }
+
+    std::smatch stats_tags_match;
+    if (regex_search(no_newline, stats_tags_match, stats_tags_regex)) {
+      stats_tags_total += stats_tags_match.size();
+    }
   }
 
   if (gzf) gzclose(gzf);
   if (fp) fclose(fp);
 
-  CharacterVector results(warc_entries.size());
-
   long idxEntry = 0;
+  CharacterVector results(warc_entries.size());
   std::for_each(warc_entries.begin(), warc_entries.end(), [&results, &idxEntry](std::string &entry) {
     results[idxEntry++] = entry;
   });
 
-  return results;
+  long idxStat = 0;
+  NumericVector stats(warc_stats.size());
+  std::for_each(warc_stats.begin(), warc_stats.end(), [&stats, &idxStat](long &stat) {
+    stats[idxStat++] = stat;
+  });
+
+  return DataFrame::create(Named("tags") = stats, _["content"] = results);
 }

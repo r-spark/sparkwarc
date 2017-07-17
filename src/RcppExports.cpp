@@ -16,7 +16,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // rcpp_read_warc
-CharacterVector rcpp_read_warc(std::string path, std::string filter, std::string include);
+DataFrame rcpp_read_warc(std::string path, std::string filter, std::string include);
 RcppExport SEXP sparkwarc_rcpp_read_warc(SEXP pathSEXP, SEXP filterSEXP, SEXP includeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
