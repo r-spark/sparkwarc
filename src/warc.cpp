@@ -16,6 +16,15 @@ List rcpp_hello_world() {
   return z ;
 }
 
+std::size_t rcpp_find_tag(std::string line, std::size_t pos) {
+  std::size_t tag_start = line.find("<", pos);
+  if (tag_start != std::string::npos && line.find(">", tag_start + 1)) {
+    return tag_start;
+  }
+
+  return std::string::npos;
+}
+
 // [[Rcpp::export]]
 DataFrame rcpp_read_warc(std::string path,
                          std::string filter,
@@ -44,10 +53,9 @@ DataFrame rcpp_read_warc(std::string path,
 
   while(gzgets(gzf, buffer, buffer_size) != Z_NULL) {
     std::string line(buffer);
-    std::string no_newline = line.substr(0, line.find_first_of('\n'));
 
     if (!filter.empty() && !one_matched) {
-      one_matched = no_newline.find(filter) != std::string::npos;
+      one_matched = line.find(filter) != std::string::npos;
     }
 
     if (std::string(line).substr(0, warc_separator.size()) == warc_separator && warc_entry.size() > 0) {
@@ -62,13 +70,14 @@ DataFrame rcpp_read_warc(std::string path,
       warc_entry.clear();
     }
 
-    if (include.empty() || no_newline.find(include) != std::string::npos) {
+    if (include.empty() || line.find(include) != std::string::npos) {
       warc_entry.append(line);
     }
 
-    std::size_t tag_start = no_newline.find("<");
-    if (tag_start != std::string::npos && no_newline.find(">", tag_start + 1)) {
+    std::size_t tag_start = rcpp_find_tag(line, 0);
+    while(tag_start != std::string::npos) {
       stats_tags_total += 1;
+      tag_start = rcpp_find_tag(line, tag_start + 1);
     }
   }
 
