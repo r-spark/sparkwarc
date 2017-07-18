@@ -69,7 +69,7 @@ spark_read_warc <- function(sc,
         devtools::install_github("javierluraschi/sparkwarc", ref = "feature/spark-apply-rcpp")
       }
 
-      library(sparkwarc)
+      rcpp_read_warc <- get("rcpp_read_warc", envir = asNamespace("sparkwarc"))
 
       entries <- apply(df, 1, function(path) {
         if (grepl("s3n://", path)) {
