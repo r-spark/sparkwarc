@@ -61,19 +61,11 @@ spark_read_warc <- function(sc,
       paths_tbl <- sdf_repartition(paths_tbl, repartition)
 
     df <- spark_apply(paths_tbl, function(df) {
-      if (!"devtools" %in% rownames(installed.packages())) {
-        install.packages("devtools")
-      }
-
-      if (!"sparkwarc" %in% rownames(installed.packages())) {
-        devtools::install_github("javierluraschi/sparkwarc", ref = "feature/spark-apply-rcpp")
-      }
-
       rcpp_read_warc <- get("rcpp_read_warc", envir = asNamespace("sparkwarc"))
 
       entries <- apply(df, 1, function(path) {
         if (grepl("s3n://", path)) {
-          path <- sub("s3n://", "commoncrawl.s3.amazonaws.com", path)
+          path <- sub("s3n://commoncrawl/", "https://commoncrawl.s3.amazonaws.com/", path)
           temp_warc <- tempfile(fileext = ".warc.gz")
           download.file(url = path, destfile = temp_warc)
           path <- temp_warc
