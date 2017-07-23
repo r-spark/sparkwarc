@@ -27,11 +27,10 @@ library(dplyr)
 
 ```{r connect-1, max.print=10}
 sc <- spark_connect(master = "local")
-spark_read_warc(
-  sc,
-  "warc",
-  system.file("samples/sample.warc.gz", package = "sparkwarc"),
-  repartition = 8)
+```
+
+```{r load-sample}
+spark_read_warc(sc, path = spark_warc_sample_path(), name = "WARC")
 ```
 
 ```{sql query-1, connection=sc, max.print=1}
@@ -105,7 +104,7 @@ config[["sparklyr.shell.driver-memory"]] <- "10G"
 sc <- spark_connect(master = "local", config = config)
 ```
 
-```{r load-1}
+```{r load-full}
 spark_read_warc(
   sc,
   "warc",

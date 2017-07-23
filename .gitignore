@@ -37,3 +37,8 @@ log4j.spark*
 .cache-main
 .settings
 .classpath
+# Rcpp
+/src/*.o
+/src/*.o-*
+/src/*.d
+/src/*.so
