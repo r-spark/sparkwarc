@@ -12,13 +12,10 @@
 #'   is, should the table be cached?)
 #' @param overwrite Boolean; overwrite the table with the given name if it
 #'   already exists?
-#' @param group \code{TRUE} to group by warc segment. Currently supported
-#'   only in HDFS and uncompressed files.
-#' @param parse \code{TRUE} to parse warc into tags, attribute, value, etc.
-#' @param filter A regular expression used to filter to each warc entry
-#'   efficiently by running native code using \code{Rcpp}.
-#' @param include A regular expression used to keep only matching lines
-#'   efficiently by running native code using \code{Rcpp}.
+#' @param match_warc include only warc files mathcing this character string.
+#' @param match_line include only lines mathcing this character string.
+#' @param parser which parser implementation to use? Options are "scala"
+#'   or "r" (default).
 #' @param ... Additional arguments reserved for future use.
 #'
 #' @examples
@@ -44,16 +41,18 @@ spark_read_warc <- function(sc,
                             repartition = 0L,
                             memory = TRUE,
                             overwrite = TRUE,
-                            group = FALSE,
-                            parse = FALSE,
-                            filter = "",
-                            include = "",
+                            match_warc = "",
+                            match_line = "",
+                            parser = c("r", "scala"),
                             ...) {
   if (overwrite && name %in% dbListTables(sc)) {
     dbRemoveTable(sc, name)
   }
 
-  if (!parse) {
+  if (!is.null(parse) && !parser %in% c("r", "scala"))
+    stop("Invalid 'parser' value, must be 'r' or 'scala'")
+
+  if (is.null(parser) || parser == "r") {
     paths_df <- data.frame(paths = strsplit(path, ",")[[1]])
     paths_tbl <- sdf_copy_to(sc, paths_df, name = "sparkwarc_paths", overwrite = TRUE)
 
@@ -78,13 +77,15 @@ spark_read_warc <- function(sc,
     }, names = c("tags", "content")) %>% spark_dataframe()
   }
   else {
+    if (nchar(match_warc) > 0) stop("Scala parser does not support 'match_warc'")
+
     df <- sparklyr::invoke_static(
       sc,
       "SparkWARC.WARC",
-      if (parse) "parse" else "load",
+      "parse",
       spark_context(sc),
       path,
-      group,
+      match_line,
       as.integer(repartition))
   }
 
