@@ -70,7 +70,7 @@ spark_read_warc <- function(sc,
           path <- temp_warc
         }
 
-        rcpp_read_warc(path, filter = filter, include = include)
+        rcpp_read_warc(path, filter = match_warc, include = match_line)
       })
 
       if (nrow(df) > 1) do.call("rbind", entries) else data.frame(entries)
