@@ -12,10 +12,18 @@ object WARC {
     val warc = sc.textFile(path)
     val warcRepart = if (repartitions > 0) warc.repartition(repartitions) else warc
 
-    val warcParsed = warcRepart.filter(line => line.contains(matchLine))
+    val warcParsed = warcRepart
+      .filter(line => line.contains(matchLine))
+      .map(line => {
+        Row(
+          "<[^>]*>".r.findAllIn(line).length,
+          line
+        )
+      })
 
     val warcStruct = StructType(
-      StructField("line", StringType, true) :: Nil
+      StructField("tags", IntegerType, true) ::
+      StructField("content", StringType, true) :: Nil
     )
 
     sqlContext.createDataFrame(warcParsed, warcStruct)
