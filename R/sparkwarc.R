@@ -33,7 +33,6 @@
 #' spark_disconnect(sc)
 #'
 #' @export
-#' @useDynLib sparkwarc, .registration = TRUE
 #' @import DBI
 spark_read_warc <- function(sc,
                             name,
@@ -70,7 +69,7 @@ spark_read_warc <- function(sc,
           path <- temp_warc
         }
 
-        sparkwarc::rcpp_read_warc(path, filter = match_warc, include = match_line)
+        sparkwarc::spark_rcpp_read_warc(path, match_warc, match_line)
       })
 
       if (nrow(df) > 1) do.call("rbind", entries) else data.frame(entries)
@@ -97,4 +96,20 @@ spark_read_warc <- function(sc,
   }
 
   result_tbl
+}
+
+#' Reads a WARC File into using Rcpp
+#'
+#' Reads a WARC (Web ARChive) file using Rcpp.
+#'
+#' @param path The path to the file. Needs to be accessible from the cluster.
+#'   Supports the \samp{"hdfs://"}, \samp{"s3n://"} and \samp{"file://"} protocols.
+#' @param match_warc include only warc files mathcing this character string.
+#' @param match_line include only lines mathcing this character string.
+#'
+#' @useDynLib sparkwarc, .registration = TRUE
+#'
+#' @export
+spark_rcpp_read_warc <- function(path, match_warc, match_line) {
+  rcpp_read_warc(path, filter = match_warc, include = match_line)
 }
