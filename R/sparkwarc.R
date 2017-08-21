@@ -60,8 +60,6 @@ spark_read_warc <- function(sc,
       paths_tbl <- sdf_repartition(paths_tbl, repartition)
 
     df <- spark_apply(paths_tbl, function(df) {
-      rcpp_read_warc <- get("rcpp_read_warc", envir = asNamespace("sparkwarc"))
-
       entries <- apply(df, 1, function(path) {
         if (grepl("s3n://", path)) {
           path <- sub("s3n://commoncrawl/", "https://commoncrawl.s3.amazonaws.com/", path)
@@ -70,7 +68,7 @@ spark_read_warc <- function(sc,
           path <- temp_warc
         }
 
-        rcpp_read_warc(path, filter = match_warc, include = match_line)
+        sparkwarc::rcpp_read_warc(path, filter = match_warc, include = match_line)
       })
 
       if (nrow(df) > 1) do.call("rbind", entries) else data.frame(entries)
