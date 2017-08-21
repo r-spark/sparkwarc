@@ -74,7 +74,7 @@ spark_read_warc <- function(sc,
 
       if (nrow(df) > 1) do.call("rbind", entries) else data.frame(entries)
     }, columns = c(
-      tags = "integer",
+      tags = "double",
       content = "character"
     )) %>% spark_dataframe()
   }
