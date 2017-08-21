@@ -58,7 +58,7 @@ spark_read_warc <- function(sc,
       paths_df,
       name = "sparkwarc_paths",
       overwrite = TRUE,
-      repartition = repartition)
+      repartition = nrow(paths_df))
 
     df <- spark_apply(paths_tbl, function(df) {
       entries <- apply(df, 1, function(path) {
@@ -73,7 +73,10 @@ spark_read_warc <- function(sc,
       })
 
       if (nrow(df) > 1) do.call("rbind", entries) else data.frame(entries)
-    }, names = c("tags", "content")) %>% spark_dataframe()
+    }, columns = c(
+      tags = "integer",
+      content = "character"
+    )) %>% spark_dataframe()
   }
   else {
     if (nchar(match_warc) > 0) stop("Scala parser does not support 'match_warc'")
