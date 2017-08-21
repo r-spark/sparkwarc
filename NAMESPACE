@@ -2,6 +2,7 @@
 
 export(cc_warc)
 export(rcpp_read_warc_sample)
+export(spark_rcpp_read_warc)
 export(spark_read_warc)
 export(spark_read_warc_sample)
 export(spark_warc_sample_path)

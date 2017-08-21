@@ -16,7 +16,7 @@ Imports:
     DBI,
     sparklyr,
     Rcpp
-RoxygenNote: 6.0.0
+RoxygenNote: 6.0.1
 LinkingTo:
     Rcpp,
 SystemRequirements: C++11
