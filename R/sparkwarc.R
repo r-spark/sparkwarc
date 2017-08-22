@@ -72,7 +72,7 @@ spark_read_warc <- function(sc,
             spark_apply_log("is downloading warc file using aws")
             path <- sub("s3n://", "s3://", path)
 
-            system2("aws", "s3", "cp", path, temp_warc)
+            system2("aws", c("s3", "cp", path, temp_warc))
           }
           else {
             spark_apply_log("is downloading warc file using download.file")
