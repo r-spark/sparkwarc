@@ -34,7 +34,7 @@ DataFrame rcpp_read_warc(std::string path,
   gzFile gzf = gzdopen(fileno(fp), "rb");
   if (!gzf) Rcpp::stop("Failed to open WARC as a compressed file.");
 
-  const int buffer_size = 4 * 1024 * 1024;
+  const int buffer_size = 4 * 1024;
   char buffer[buffer_size] = {'\0'};
 
   std::list<std::string> warc_entries;
@@ -52,20 +52,22 @@ DataFrame rcpp_read_warc(std::string path,
   while(gzgets(gzf, buffer, buffer_size) != Z_NULL) {
     std::string line(buffer);
 
-    if (!filter.empty() && !one_matched) {
-      one_matched = line.find(filter) != std::string::npos;
-    }
-
-    if (std::string(line).substr(0, warc_separator.size()) == warc_separator && warc_entry.size() > 0) {
-      if (filter.empty() || one_matched) {
-        warc_entries.push_back(warc_entry);
-        warc_stats.push_back(stats_tags_total);
-        stats_tags_total = 0;
+    if (!filter.empty()) {
+      if (!one_matched) {
+        one_matched = line.find(filter) != std::string::npos;
       }
 
-      one_matched = false;
+      if (std::string(line).substr(0, warc_separator.size()) == warc_separator && warc_entry.size() > 0) {
+        if (filter.empty() || one_matched) {
+          warc_entries.push_back(warc_entry);
+          warc_stats.push_back(stats_tags_total);
+          stats_tags_total = 0;
+        }
 
-      warc_entry.clear();
+        one_matched = false;
+
+        warc_entry.clear();
+      }
     }
 
     if (include.empty() || line.find(include) != std::string::npos) {
@@ -77,6 +79,11 @@ DataFrame rcpp_read_warc(std::string path,
       stats_tags_total += 1;
       tag_start = rcpp_find_tag(line, tag_start + 1);
     }
+  }
+
+  if (!warc_entry.empty()) {
+    warc_entries.push_back(warc_entry);
+    warc_stats.push_back(stats_tags_total);
   }
 
   if (gzf) gzclose(gzf);
