@@ -62,11 +62,17 @@ spark_read_warc <- function(sc,
 
     df <- spark_apply(paths_tbl, function(df) {
       entries <- apply(df, 1, function(path) {
+        spark_apply_log("is processing warc path ", path)
+
         if (grepl("s3n://", path)) {
+          spark_apply_log("is downloading warc file")
+
           path <- sub("s3n://commoncrawl/", "https://commoncrawl.s3.amazonaws.com/", path)
           temp_warc <- tempfile(fileext = ".warc.gz")
           download.file(url = path, destfile = temp_warc)
           path <- temp_warc
+
+          spark_apply_log("finished downloading warc file")
         }
 
         sparkwarc::spark_rcpp_read_warc(path, match_warc, match_line)
