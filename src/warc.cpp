@@ -34,7 +34,7 @@ DataFrame rcpp_read_warc(std::string path,
   gzFile gzf = gzdopen(fileno(fp), "rb");
   if (!gzf) Rcpp::stop("Failed to open WARC as a compressed file.");
 
-  const int buffer_size = 4 * 1024;
+  const int buffer_size = 4 * 1024 * 1024;
   char buffer[buffer_size] = {'\0'};
 
   std::list<std::string> warc_entries;
