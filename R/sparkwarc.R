@@ -65,13 +65,23 @@ spark_read_warc <- function(sc,
         spark_apply_log("is processing warc path ", path)
 
         if (grepl("s3n://", path)) {
-          spark_apply_log("is downloading warc file")
-
-          path <- sub("s3n://commoncrawl/", "https://commoncrawl.s3.amazonaws.com/", path)
+          aws_enabled <- length(system2("which", "aws", stdout = TRUE)) > 0
           temp_warc <- tempfile(fileext = ".warc.gz")
-          download.file(url = path, destfile = temp_warc)
-          path <- temp_warc
 
+          if (aws_enabled) {
+            spark_apply_log("is downloading warc file using aws")
+            path <- sub("s3n://", "s3://", path)
+
+            system2("aws", "s3", "cp", path, temp_warc)
+          }
+          else {
+            spark_apply_log("is downloading warc file using download.file")
+
+            path <- sub("s3n://commoncrawl/", "https://commoncrawl.s3.amazonaws.com/", path)
+            download.file(url = path, destfile = temp_warc)
+          }
+
+          path <- temp_warc
           spark_apply_log("finished downloading warc file")
         }
 
