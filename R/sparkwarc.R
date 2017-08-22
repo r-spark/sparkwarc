@@ -63,6 +63,7 @@ spark_read_warc <- function(sc,
     df <- spark_apply(paths_tbl, function(df) {
       entries <- apply(df, 1, function(path) {
         spark_apply_log("is processing warc path ", path)
+        temp_warc <- NULL
 
         if (grepl("s3n://", path)) {
           aws_enabled <- length(system2("which", "aws", stdout = TRUE)) > 0
@@ -85,7 +86,11 @@ spark_read_warc <- function(sc,
           spark_apply_log("finished downloading warc file")
         }
 
-        sparkwarc::spark_rcpp_read_warc(path, match_warc, match_line)
+        result <- sparkwarc::spark_rcpp_read_warc(path, match_warc, match_line)
+
+        if (!is.null(temp_warc)) unlink(temp_warc)
+
+        result
       })
 
       if (nrow(df) > 1) do.call("rbind", entries) else data.frame(entries)
