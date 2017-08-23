@@ -53,12 +53,13 @@ spark_read_warc <- function(sc,
 
   if (is.null(parser) || parser == "r") {
     paths_df <- data.frame(paths = strsplit(path, ",")[[1]])
+    path_repartition <- if (identical(repartition, 0L)) nrow(paths_df) else repartition
     paths_tbl <- sdf_copy_to(
       sc,
       paths_df,
       name = "sparkwarc_paths",
       overwrite = TRUE,
-      repartition = nrow(paths_df))
+      repartition = path_repartition)
 
     df <- spark_apply(paths_tbl, function(df) {
       entries <- apply(df, 1, function(path) {
