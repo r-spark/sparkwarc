@@ -4,9 +4,18 @@
 \alias{spark_read_warc}
 \title{Reads a WARC File into Apache Spark}
 \usage{
-spark_read_warc(sc, name, path, repartition = 0L, memory = TRUE,
-  overwrite = TRUE, match_warc = "", match_line = "", parser = c("r",
-  "scala"), ...)
+spark_read_warc(
+  sc,
+  name,
+  path,
+  repartition = 0L,
+  memory = TRUE,
+  overwrite = TRUE,
+  match_warc = "",
+  match_line = "",
+  parser = c("r", "scala"),
+  ...
+)
 }
 \arguments{
 \item{sc}{An active \code{spark_connection}.}
@@ -39,6 +48,7 @@ Reads a WARC (Web ARChive) file into Apache Spark using sparklyr.
 }
 \examples{
 
+\dontrun{
 library(sparklyr)
 sc <- spark_connect(master = "spark://HOST:PORT")
 df <- spark_read_warc(
@@ -50,5 +60,6 @@ df <- spark_read_warc(
 )
 
 spark_disconnect(sc)
+}
 
 }

@@ -20,6 +20,7 @@
 #'
 #' @examples
 #'
+#' \dontrun{
 #' library(sparklyr)
 #' sc <- spark_connect(master = "spark://HOST:PORT")
 #' df <- spark_read_warc(
@@ -31,9 +32,11 @@
 #' )
 #'
 #' spark_disconnect(sc)
+#'}
 #'
-#' @export
 #' @import DBI
+#' @importFrom utils download.file
+#' @export
 spark_read_warc <- function(sc,
                             name,
                             path,
@@ -87,7 +90,7 @@ spark_read_warc <- function(sc,
           spark_apply_log("finished downloading warc file")
         }
 
-        result <- sparkwarc::spark_rcpp_read_warc(path, match_warc, match_line)
+        result <- spark_rcpp_read_warc(path, match_warc, match_line)
 
         if (!is.null(temp_warc)) unlink(temp_warc)
 

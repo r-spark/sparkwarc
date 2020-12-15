@@ -7,13 +7,13 @@
 spark_read_warc_sample(sc, filter = "", include = "")
 }
 \arguments{
+\item{sc}{An active \code{spark_connection}.}
+
 \item{filter}{A regular expression used to filter to each warc entry
 efficiently by running native code using \code{Rcpp}.}
 
 \item{include}{A regular expression used to keep only matching lines
 efficiently by running native code using \code{Rcpp}.}
-
-\item{An}{active \code{spark_connection}.}
 }
 \description{
 Loads the sample warc file in Spark
