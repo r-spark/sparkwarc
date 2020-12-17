@@ -5,32 +5,21 @@
 
 using namespace Rcpp;
 
-// rcpp_hello_world
-List rcpp_hello_world();
-RcppExport SEXP _sparkwarc_rcpp_hello_world() {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rcpp_hello_world());
-    return rcpp_result_gen;
-END_RCPP
-}
 // rcpp_read_warc
-DataFrame rcpp_read_warc(std::string path, std::string filter, std::string include);
+DataFrame rcpp_read_warc(std::string const& path, std::string const& filter, std::string const& include);
 RcppExport SEXP _sparkwarc_rcpp_read_warc(SEXP pathSEXP, SEXP filterSEXP, SEXP includeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type path(pathSEXP);
-    Rcpp::traits::input_parameter< std::string >::type filter(filterSEXP);
-    Rcpp::traits::input_parameter< std::string >::type include(includeSEXP);
+    Rcpp::traits::input_parameter< std::string const& >::type path(pathSEXP);
+    Rcpp::traits::input_parameter< std::string const& >::type filter(filterSEXP);
+    Rcpp::traits::input_parameter< std::string const& >::type include(includeSEXP);
     rcpp_result_gen = Rcpp::wrap(rcpp_read_warc(path, filter, include));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_sparkwarc_rcpp_hello_world", (DL_FUNC) &_sparkwarc_rcpp_hello_world, 0},
     {"_sparkwarc_rcpp_read_warc", (DL_FUNC) &_sparkwarc_rcpp_read_warc, 3},
     {NULL, NULL, 0}
 };
