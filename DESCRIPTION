@@ -11,14 +11,14 @@ Maintainer: Yitao Li <yitao@rstudio.com>
 Description: Load WARC (Web ARChive) files into Apache Spark using 'sparklyr'. This
     allows to read files from the Common Crawl project <http://commoncrawl.org/>.
 License: Apache License 2.0
-BugReports: https://github.com/javierluraschi/sparkwarc
+BugReports: https://github.com/r-spark/sparkwarc
 Encoding: UTF-8
 LazyData: true
 Imports:
     DBI,
     sparklyr,
     Rcpp
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.1
 LinkingTo:
     Rcpp,
 SystemRequirements: C++11

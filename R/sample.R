@@ -16,12 +16,12 @@ spark_warc_sample_path <- function() {
 rcpp_read_warc_sample <- function(filter = "", include = "") {
   sample_warc <- spark_warc_sample_path()
 
-  sparkwarc:::rcpp_read_warc(sample_warc, filter, include)
+  rcpp_read_warc(sample_warc, filter, include)
 }
 
 #' Loads the sample warc file in Spark
 #'
-#' @param An active \code{spark_connection}.
+#' @param sc An active \code{spark_connection}.
 #' @param filter A regular expression used to filter to each warc entry
 #'   efficiently by running native code using \code{Rcpp}.
 #' @param include A regular expression used to keep only matching lines
