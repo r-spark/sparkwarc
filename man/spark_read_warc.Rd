@@ -50,11 +50,12 @@ Reads a WARC (Web ARChive) file into Apache Spark using sparklyr.
 
 \dontrun{
 library(sparklyr)
-sc <- spark_connect(master = "spark://HOST:PORT")
-df <- spark_read_warc(
+library(sparkwarc)
+sc <- spark_connect(master = "local")
+sdf <- spark_read_warc(
   sc,
-  system.file("samples/sample.warc", package = "sparkwarc"),
-  repartition = FALSE,
+  name = "sample_warc",
+  path = system.file(file.path("samples", "sample.warc"), package = "sparkwarc"),
   memory = FALSE,
   overwrite = FALSE
 )

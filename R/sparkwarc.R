@@ -22,11 +22,12 @@
 #'
 #' \dontrun{
 #' library(sparklyr)
-#' sc <- spark_connect(master = "spark://HOST:PORT")
-#' df <- spark_read_warc(
+#' library(sparkwarc)
+#' sc <- spark_connect(master = "local")
+#' sdf <- spark_read_warc(
 #'   sc,
-#'   system.file("samples/sample.warc", package = "sparkwarc"),
-#'   repartition = FALSE,
+#'   name = "sample_warc",
+#'   path = system.file(file.path("samples", "sample.warc"), package = "sparkwarc"),
 #'   memory = FALSE,
 #'   overwrite = FALSE
 #' )
@@ -62,7 +63,7 @@ spark_read_warc <- function(sc,
       paths_df,
       name = "sparkwarc_paths",
       overwrite = TRUE,
-      repartition = path_repartition)
+      repartition = as.integer(path_repartition))
 
     df <- spark_apply(paths_tbl, function(df) {
       entries <- apply(df, 1, function(path) {
