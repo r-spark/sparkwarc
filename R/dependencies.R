@@ -15,3 +15,7 @@ spark_dependencies <- function(spark_version, scala_version, ...) {
 .onLoad <- function(libname, pkgname) {
   sparklyr::register_extension(pkgname)
 }
+
+.onUnload <- function(libpath) {
+  library.dynam.unload("sparkwarc", libpath)
+}
