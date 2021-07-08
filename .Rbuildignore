@@ -6,3 +6,4 @@ log4j.spark.log.*$
 ^README\.Rmd$
 ^README_files$
 ^README_images$
+^NEWS\.md$
