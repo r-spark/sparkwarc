@@ -3,7 +3,7 @@ Type: Package
 Title: Load WARC Files into Apache Spark
 Version: 0.1.6
 Authors@R: c(person("Javier", "Luraschi", email = "jluraschi@gmail.com", role = c("aut")),
-             person("Yitao", "Li", role = c("aut"), email = "yitao@rstudio.com",
+             person("Yitao", "Li", role = "aut", email = "yitaoli1990@gmail.com",
                     comment = c(ORCID = "0000-0002-1261-905X")),
              person("Edgar", "Ruiz", email = "edgar@rstudio.com", role = c("aut", "cre"))
            )
